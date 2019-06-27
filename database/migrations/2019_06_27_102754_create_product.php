@@ -25,9 +25,7 @@ class CreateProduct extends Migration
             $table->string('product_size');
             $table->string('product_color');
             $table->integer('publication_status');
-            
             $table->timestamps();
-
 
         });
     }
