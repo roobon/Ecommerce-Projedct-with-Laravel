@@ -322,6 +322,7 @@ class ComposerStaticInitb5f85be9816daec78bd4f5fd84d44cff
         'Carbon\\Translator' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Translator.php',
         'Carbon\\Upgrade' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Upgrade.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
+        'CreateTest1Table' => __DIR__ . '/../..' . '/database/migrations/2019_06_27_093329_create_test1_table.php',
         'CreateTestTable' => __DIR__ . '/../..' . '/database/migrations/2019_06_27_085729_create_test_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'Cron\\AbstractField' => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron/AbstractField.php',
