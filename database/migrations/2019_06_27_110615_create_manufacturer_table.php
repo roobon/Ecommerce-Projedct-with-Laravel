@@ -18,7 +18,7 @@ class CreateManufacturerTable extends Migration
             $table->timestamps();
             $table->char('name', 30);
             $table->text('description');
-            $table->inteser('status', 2);
+            $table->integer('status', 2);
 
         });
     }
