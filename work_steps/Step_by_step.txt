@@ -1,7 +1,16 @@
-Laravel Ecommerce
+############################ Laravel Ecommerce Project #######################
 
-1. Install Laravel 5.4
+##########################################
+####### 1. Install Laravel 5.4 ###########
+##########################################
+
+composer create-project laravel/laravel "5.4.*"
+
 	.gitignore - .env, vendor
+
+
+
+
 2. Add Local Repository with local installation folder xampp\htdocs\laravel_ecommerce
 3. Create Web Repository and add contributors
 4. Configure .env file
