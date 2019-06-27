@@ -1,9 +1,6 @@
-[Imgur](https://i.imgur.com/PBNnI03.jpg)
-https://imgur.com/PBNnI03
+<img src="[Imgur](https://i.imgur.com/PBNnI03.jpg)" alt="">
 
-<p align="center">
-	<img src="/public/img/logo.png" width="200"/>
-</p>
+
 # Ecommerce Project with Laravel
 This is an e-commerce platform made mostly using Laravel 5.4
 
