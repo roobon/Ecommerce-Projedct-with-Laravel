@@ -30,44 +30,44 @@ Thanks to all the students who contributes here.
 <table>
 	<tr>
 		<td>
-			<a href="https://github.com/aponislamapon"><img src="https://avatars0.githubusercontent.com/u/48382430?s=400&v=4" alt="" width="100"></a>	
+			<a href="https://github.com/aponislamapon"><img src="https://avatars0.githubusercontent.com/u/48382430?s=400&v=4" alt="" width="150"></a>	
 		</td>
 		<td>
-			<a href="https://github.com/aponislamapon"><img src="https://avatars0.githubusercontent.com/u/48382430?s=400&v=4" alt="" width="100"></a>
+			<a href="https://github.com/aponislamapon"><img src="https://avatars0.githubusercontent.com/u/48382430?s=400&v=4" alt="" width="150"></a>
 		</td>
 		<td>
-			<a href="https://github.com/aponislamapon"><img src="https://avatars0.githubusercontent.com/u/48382430?s=400&v=4" alt="" width="100"></a>
+			<a href="https://github.com/aponislamapon"><img src="https://avatars0.githubusercontent.com/u/48382430?s=400&v=4" alt="" width="150"></a>
 		</td>
 		<td>
-			<a href="https://github.com/aponislamapon"><img src="https://avatars0.githubusercontent.com/u/48382430?s=400&v=4" alt="" width="100"></a>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<a href="https://github.com/aponislamapon"><img src="https://avatars0.githubusercontent.com/u/48382430?s=400&v=4" alt="" width="100"></a>	
-		</td>
-		<td>
-			<a href="https://github.com/aponislamapon"><img src="https://avatars0.githubusercontent.com/u/48382430?s=400&v=4" alt="" width="100"></a>
-		</td>
-		<td>
-			<a href="https://github.com/aponislamapon"><img src="https://avatars0.githubusercontent.com/u/48382430?s=400&v=4" alt="" width="100"></a>
-		</td>
-		<td>
-			<a href="https://github.com/aponislamapon"><img src="https://avatars0.githubusercontent.com/u/48382430?s=400&v=4" alt="" width="100"></a>
+			<a href="https://github.com/aponislamapon"><img src="https://avatars0.githubusercontent.com/u/48382430?s=400&v=4" alt="" width="150"></a>
 		</td>
 	</tr>
 	<tr>
 		<td>
-			<a href="https://github.com/aponislamapon"><img src="https://avatars0.githubusercontent.com/u/48382430?s=400&v=4" alt="" width="100"></a>	
+			<a href="https://github.com/aponislamapon"><img src="https://avatars0.githubusercontent.com/u/48382430?s=400&v=4" alt="" width="150"></a>	
 		</td>
 		<td>
-			<a href="https://github.com/aponislamapon"><img src="https://avatars0.githubusercontent.com/u/48382430?s=400&v=4" alt="" width="100"></a>
+			<a href="https://github.com/aponislamapon"><img src="https://avatars0.githubusercontent.com/u/48382430?s=400&v=4" alt="" width="150"></a>
 		</td>
 		<td>
-			<a href="https://github.com/aponislamapon"><img src="https://avatars0.githubusercontent.com/u/48382430?s=400&v=4" alt="" width="100"></a>
+			<a href="https://github.com/aponislamapon"><img src="https://avatars0.githubusercontent.com/u/48382430?s=400&v=4" alt="" width="150"></a>
 		</td>
 		<td>
-			<a href="https://github.com/aponislamapon"><img src="https://avatars0.githubusercontent.com/u/48382430?s=400&v=4" alt="" width="100"></a>
+			<a href="https://github.com/aponislamapon"><img src="https://avatars0.githubusercontent.com/u/48382430?s=400&v=4" alt="" width="150"></a>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<a href="https://github.com/aponislamapon"><img src="https://avatars0.githubusercontent.com/u/48382430?s=400&v=4" alt="" width="150"></a>	
+		</td>
+		<td>
+			<a href="https://github.com/aponislamapon"><img src="https://avatars0.githubusercontent.com/u/48382430?s=400&v=4" alt="" width="150"></a>
+		</td>
+		<td>
+			<a href="https://github.com/aponislamapon"><img src="https://avatars0.githubusercontent.com/u/48382430?s=400&v=4" alt="" width="150"></a>
+		</td>
+		<td>
+			<a href="https://github.com/aponislamapon"><img src="https://avatars0.githubusercontent.com/u/48382430?s=400&v=4" alt="" width="150"></a>
 		</td>
 	</tr>
 </table>
