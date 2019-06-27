@@ -1,3 +1,8 @@
+<blockquote class="imgur-embed-pub" lang="en" data-id="a/6JWxE5L"><a href="//imgur.com/a/6JWxE5L">Blockchain in eCommerce</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+
+<p align="center">
+	<img src="/public/img/logo.png" width="200"/>
+</p>
 # Ecommerce Project with Laravel
 This is an e-commerce platform made mostly using Laravel 5.4
 
