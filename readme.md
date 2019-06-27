@@ -5,7 +5,7 @@
 
 Students of IDB-BISEW IT Scholarship Project
 Web Development with PHP and Framework, Round39
-==
+
 
 
 Team Members
@@ -17,7 +17,7 @@ Team Members
 ## Documentation
 
 ## Demo 
-
+A demo store can be found at http://wdpfbd.com
 
 ## Contributing
 
@@ -74,5 +74,5 @@ Thanks to all the students who contributes here.
 
 
 ## Sponsors
-Datapark Bangladesh Limited and IDB-BISEW
-==
+
+<a href="http://www.dataparkbd.com">Datapark Bangladesh Limited</a> and <a href="http://www.idb-bisew.org">IDB-BISEW</a> 
