@@ -1,4 +1,4 @@
-<img src="[Imgur](https://i.imgur.com/PBNnI03.jpg)" alt="">
+<img src="https://i.imgur.com/PBNnI03.jpg" alt="">
 
 
 # Ecommerce Project with Laravel
