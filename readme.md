@@ -1,9 +1,31 @@
 # Ecommerce Project with Laravel
 
 
-Project by Round39 Students of IDB-BISEW IT Scholarship Project
-===
+## Project by 
+
+Students of IDB-BISEW IT Scholarship Project
+Web Development with PHP and Framework, Round39
+==
 
 
 Team Members
 ===
+
+
+## Changelog
+
+## Documentation
+
+## Demo 
+
+
+## Contributing
+
+
+
+## Contributors
+
+
+## Sponsors
+Datapark Bangladesh Limited and IDB-BISEW
+==
