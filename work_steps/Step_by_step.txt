@@ -19,7 +19,12 @@ composer create-project laravel/laravel "5.4.*"
 7. Start with Blade templating
 
 
-----------------------------------------------
-Overwriting error fixing command
+####### Overwriting error fixing command ###########
 git reset --hard
 git pull
+
+
+---------------------------------------------
+How to edit readme.md file
+---------------------------------------------
+https://www.youtube.com/watch?time_continue=166&v=4UTSEKzsSvM
