@@ -6,3 +6,10 @@ Laravel Ecommerce
 3. Create Web Repository and add contributors
 4. Configure .env file
 5. Create Database migration with all fields
+6. php artisan migrate 
+
+
+----------------------------------------------
+Overwriting error fixing command
+git reset --hard
+git pull
