@@ -25,6 +25,8 @@ Team Members
 
 ## Contributors
 
+Thanks to all the students who contributes here. (CONTRIBUTING.md).
+
 
 ## Sponsors
 Datapark Bangladesh Limited and IDB-BISEW
