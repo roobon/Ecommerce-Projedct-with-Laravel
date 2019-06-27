@@ -14,11 +14,11 @@ class CreateManufacturerTable extends Migration
     public function up()
     {
         Schema::create('manufacturer', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+            $table->increments('id');            
             $table->char('name', 30);
             $table->text('description');
-            $table->integer('status', 2);
+            $table->tinyInteger('status');
+            $table->timestamps();
 
         });
     }
