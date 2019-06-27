@@ -7,6 +7,7 @@ Laravel Ecommerce
 4. Configure .env file
 5. Create Database migration with all fields
 6. php artisan migrate 
+7. Start with Blade templating
 
 
 ----------------------------------------------
