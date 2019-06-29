@@ -34,6 +34,10 @@ Reset the composer autoload files: composer dump-autoload
 ####### 7. Start with Blade templating ##########
 #################################################
 
+Frontend Theme: https://mega.nz/#!yJsyhKLa!ESpG-LfhQ3FdAW5liKjSCTllxGYcLWaCduWot08Hao0
+
+Backend Theme:  https://mega.nz/#!zN1SDSAY!x58xvmFTxV5oADgefWKP8IK09o19FjEaCs7iyXP70Mc
+
 	- Blade templating for frontend
 	- Blade templating for backend
 
