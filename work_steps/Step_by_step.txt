@@ -28,6 +28,11 @@ Reset the composer autoload files: composer dump-autoload
 7. Start with Blade templating
 
 
+
+
+
+
+
 ####### Overwriting error fixing command ###########
 git reset --hard
 git pull
