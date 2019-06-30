@@ -30,7 +30,7 @@
 	@include('layouts.header');
 
 	<!--Slider -->
-	@include('layouts.slider');
+	
 
 	
 	
@@ -40,7 +40,7 @@
 			<!--Sidebar -->
 				@include('layouts.sidebar');	
 				
-				@include('layouts.featured');
+				@yield('page_content');
 			</div>
 		</div>
 	</section>
