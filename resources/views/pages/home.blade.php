@@ -1,5 +1,5 @@
-@extends('layouts.default');
-@section('page_content');
+@extends('layouts.default')
+@section('page_content')
 
 	<div class="col-sm-9 padding-right">
 					<div class="features_items"><!--features_items-->
@@ -546,4 +546,4 @@
 					
 				</div>
 
-@endsection;
+@endsection
