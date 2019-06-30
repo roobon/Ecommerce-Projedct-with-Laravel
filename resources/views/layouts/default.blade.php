@@ -30,7 +30,7 @@
 	@include('layouts.header');
 
 	<!--Slider -->
-	
+	@include('layouts.slider');
 
 	
 	
