@@ -1,5 +1,5 @@
-@extends('layouts.default');
-@section('page_content');
+@extends('layouts.default')
+@section('page_content')
 	<section id="advertisement">
 		<div class="container">
 			<img src="{{URL::to('frontend/images/shop/advertisement.jpg')}}" alt="" />
@@ -474,4 +474,4 @@
 		</div>
 	</section>
 
-@endsection;
+@endsection
