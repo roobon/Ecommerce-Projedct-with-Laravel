@@ -116,9 +116,9 @@
 	
 		<script src="{{asset('backend/js/jquery.cookie.js')}}"></script>
 	
-		<script src='{{asset('backend/js/fullcalendar.min.js')}}'></script>
+		<script src="{{asset('backend/js/fullcalendar.min.js')}}"></script>
 	
-		<script src='{{asset('backend/js/jquery.dataTables.min.js')}}'></script>
+		<script src="{{asset('backend/js/jquery.dataTables.min.js')}}"></script>
 
 		<script src="{{asset('backend/js/excanvas.js')}}"></script>
 		<script src="{{asset('backend/js/jquery.flot.js')}}"></script>
