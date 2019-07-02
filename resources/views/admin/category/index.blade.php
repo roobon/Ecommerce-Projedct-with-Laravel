@@ -20,7 +20,8 @@
 	 			<td>dfdfdf</td>
 	 			<td>
 	 				<form action="">
-	 					<a href="">Edit || Delete</a>
+	 					<a href="">Edit</a> ||
+	 					<a href="">Delete</a>
 	 				</form>
 	 			</td>
 	 		</tbody>
