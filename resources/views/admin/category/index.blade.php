@@ -29,9 +29,6 @@
 								<td class="center "></td>
 								<td class="center "></td>
 								<td class="center ">
-									<span class="label label-success">Active</span>
-								</td>
-								<td class="center ">
 									<a class="btn btn-success" href="#">
 										<i class="halflings-icon white zoom-in"></i>  
 									</a>
