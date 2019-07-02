@@ -23,9 +23,11 @@
 						  
 					  <tbody role="alert" aria-live="polite" aria-relevant="all">
 					  	<tr class="odd">
-								<td class="  sorting_1">Dennis Ji</td>
-								<td class="center ">2012/01/01</td>
-								<td class="center ">Member</td>
+								<td class="  sorting_1"></td>
+								<td class="center "></td>
+								<td class="center "></td>
+								<td class="center "></td>
+								<td class="center "></td>
 								<td class="center ">
 									<span class="label label-success">Active</span>
 								</td>
