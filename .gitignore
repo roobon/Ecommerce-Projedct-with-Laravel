@@ -3,6 +3,7 @@
 /public/storage
 /storage/*.key
 /public/frontend/images
+/public/backend/img
 /.idea
 /.vagrant
 Homestead.json
@@ -10,7 +11,6 @@ Homestead.yaml
 npm-debug.log
 yarn-error.log
 
-*.png
-*.jpg
+
 database/migrations/2019_06_27_234121_create_tbl_admin.php
 database/migrations/2014_10_12_000000_create_users_table.php

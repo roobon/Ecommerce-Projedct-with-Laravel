@@ -1,7 +1,7 @@
 @extends('admin.layouts.default')
 @section('admincontent')
 <div class="row-fluid sortable ui-sortable">
-				<div class="box span12">
+				<div class="box blue span12">
 					<div class="box-header" data-original-title="">
 						<h2><i class="halflings-icon edit"></i><span class="break"></span>create category</h2>
 						<div class="box-icon">
@@ -14,15 +14,15 @@
 						<form class="form-horizontal">
 							<fieldset>
 						
-							  <div class="control-group success">
-								<label class="control-label" for="inputSuccess">category name</label>
+							  <div class="control-group ">
+								<label style="color:black" class="control-label" for="prependedInput">category name</label>
 								<div class="controls">
 								  <input name="category_name" type="text" id="inputSuccess">
 								  <!-- <span class="help-inline">Woohoo!</span> -->
 								</div>
 							  </div>
-                              <div class="control-group success">
-								<label class="control-label" for="inputSuccess">category description</label>
+                              <div class="control-group ">
+								<label style="color: black" class="control-label" for="input">category description</label>
 								<div class="controls">
                                 
                               
@@ -36,10 +36,10 @@
 								</div>
 							  </div>
                       
-							  <div class="control-group">
-								<label class="control-label" for="selectError3">publication status</label>
+							  <div class="control-group ">
+								<label style="color: black" class="control-label" for="selectError3">publication status</label>
 								<div class="controls">
-								  <select id="selectError3" name="publication_status">
+								  <select id="selectError3" name="publication_status" >
 									<option value="" selected hidden>select one</option>
 									<option value="1">published</option>
 									<option value="0">draft</option>

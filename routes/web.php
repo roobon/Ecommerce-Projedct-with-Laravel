@@ -23,3 +23,4 @@ Route::resource('admin/category', 'CategoryController');
 Route::resource('admin/customer', 'CustomerController');
 
 
+
