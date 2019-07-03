@@ -2973,3 +2973,16 @@ ul.messagesList li span.date {
 	}
     
 }
+
+.adminhome {
+	background-color: white;
+	height: 100px;
+	border: 3px solid black;
+	margin-top: 20px;
+	padding: 25px;
+	text-align: center;
+
+}
+.adminhome h1{
+	font-size: 40px;
+}
