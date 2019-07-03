@@ -37,7 +37,7 @@
 							  </div>
                       
 							  <div class="control-group">
-								<label style="color:black"class="control-label" for="selectError3">publication status</label>
+								<label style="color:black" class="control-label" for="selectError3">publication status</label>
 								<div class="controls">
 								  <select id="selectError3" name="publication_status">
 									<option value="" selected hidden>select one</option>
