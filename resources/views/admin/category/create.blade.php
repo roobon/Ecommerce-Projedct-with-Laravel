@@ -15,14 +15,14 @@
 							<fieldset>
 						
 							  <div class="control-group success">
-								<label class="control-label" for="inputSuccess">category name</label>
+								<label class="control-label" for="input">category name</label>
 								<div class="controls">
-								  <input name="category_name" type="text" id="inputSuccess">
+								  <input name="category_name" type="text" id="input">
 								  <!-- <span class="help-inline">Woohoo!</span> -->
 								</div>
 							  </div>
                               <div class="control-group success">
-								<label class="control-label" for="inputSuccess">category description</label>
+								<label class="control-label" for="input">category description</label>
 								<div class="controls">
                                 
                               
