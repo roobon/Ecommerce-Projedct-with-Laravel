@@ -19,5 +19,6 @@ Route::get('/shop', 'HomeController@shop');
 
 //Backend
 Route::get('/admin', 'DashboardController@index');
+Route::resource('category', 'CategoryController');
 
 
