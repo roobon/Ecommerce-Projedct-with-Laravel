@@ -17,7 +17,13 @@
 	 			<td>ddddddd</td>
 	 			<td>fgfdgfdg</td>
 	 			<td>dfgdgdg</td>
-	 			<td>dfdfdf</td> 
+	 			<td>dfdfdf</td>
+	 			<td>
+	 				<form action="">
+	 					<a href="">Edit</a> ||
+	 					<a href="">Delete</a>
+	 				</form>
+	 			</td>
 	 		</tbody>
 	 	</table>
 	</div>
