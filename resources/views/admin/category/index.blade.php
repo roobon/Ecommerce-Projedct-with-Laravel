@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-</head>
-<body>
-	 <div class="container">
-	 	<table>
+@extends('admin.layouts.default')
+@section('admincontent')
+	<div class="container">
+	 	<table class="table table-striped">
 	 		<thead>
 	 			<tr>
 					<th>Category ID</th>
@@ -18,22 +13,15 @@
 				</tr>
 	 		</thead>
 	 		<tbody>
-	 			@foreach()
-	 			<td></td>
-	 			<td></td>
-	 			<td></td>
-	 			<td></td>
-	 			<td></td>
-	 			<td>
-	 				<form action="" method="">
-	 					<a href="">Edit</a>
-	 					<input type="text" name="" value="DELETE">
-	 					<button class="btn btn-danger" type="submit">Delete</button>
-	 				</form>
-	 			</td>
-	 			@endforeach
+	 			<td>hjdsfhdk</td>
+	 			<td>ddddddd</td>
+	 			<td>fgfdgfdg</td>
+	 			<td>dfgdgdg</td>
+	 			<td>dfdfdf</td> 
 	 		</tbody>
 	 	</table>
-	 </div>
-</body>
-</html>
+	</div>
+
+
+	@stop
+ 
