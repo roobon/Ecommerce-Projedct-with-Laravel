@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Customer;
 
 class CustomerController extends Controller
 {
@@ -14,7 +15,9 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        //
+        $allcustomer = Customer::all()->toArray();
+        return view('admin.customer.index', compact('allcustomer'));
+        
     }
 
     /**
