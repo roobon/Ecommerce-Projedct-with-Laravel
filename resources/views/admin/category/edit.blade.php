@@ -15,14 +15,14 @@
 							<fieldset>
 						
 							  <div class="control-group success">
-								<label class="control-label" for="inputSuccess">category name</label>
+								<label style="color: black" class="control-label" for="inputSuccess">category name</label>
 								<div class="controls">
 								  <input name="category_name" type="text" id="inputSuccess">
 								  <!-- <span class="help-inline">Woohoo!</span> -->
 								</div>
 							  </div>
                               <div class="control-group success">
-								<label class="control-label" for="inputSuccess">category description</label>
+								<label style="color: black" class="control-label" for="inputSuccess">category description</label>
 								<div class="controls">
                                 
                               
@@ -37,7 +37,7 @@
 							  </div>
                       
 							  <div class="control-group">
-								<label style="color:black" class="control-label" for="selectError3">publication status</label>
+								<label style="color: black" class="control-label" for="selectError3">publication status</label>
 								<div class="controls">
 								  <select id="selectError3" name="publication_status">
 									<option value="" selected hidden>select one</option>
