@@ -12,8 +12,8 @@
 			<li>
 				<a class="dropmenu" href="#"><i class="halflings-icon user"></i><span class="hidden-tablet">Customer</span></a>
 				<ul>
-					<li><a class="submenu" href="{{url('admin/category')}}"><i class="halflings-icon user"></i><span class="hidden-tablet">All Customer</span></a></li>
-					<li><a class="submenu" href="{{url('admin/category/create')}}"><i class="halflings-icon user"></i><span class="hidden-tablet">New Customer</span></a></li>
+					<li><a class="submenu" href="{{url('admin/customer')}}"><i class="halflings-icon user"></i><span class="hidden-tablet">All Customer</span></a></li>
+					<li><a class="submenu" href="{{url('admin/customer/create')}}"><i class="halflings-icon user"></i><span class="hidden-tablet">New Customer</span></a></li>
 				</ul>
 			</li>
 			<li>
