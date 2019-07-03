@@ -42,7 +42,6 @@
 			<br><!--/row-->
 
 			<div class="">
-				<h1 style="text-align: center; color:blue;">Welcome to Admin Panel</h1>
 
 				
 				<img class="img-fluid" style="width:100%;" src="{{ URL::to('backend/img/administrator.jpg') }}">
