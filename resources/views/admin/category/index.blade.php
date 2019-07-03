@@ -1,5 +1,6 @@
 @extends('admin.layouts.default')
 @section('admincontent')
+<div id="content" class="span10" style="min-height: 282px;">
 	 <div class="box span12">
 					<div class="box-header" data-original-title="">
 						<h2><i class="halflings-icon user"></i><span class="break"></span>Categories</h2>
@@ -44,6 +45,6 @@
 					</table><div class="row-fluid"><div class="span12"><div class="dataTables_info" id="DataTables_Table_0_info">Showing 1 to 10 of 32 entries</div></div><div class="span12 center"><div class="dataTables_paginate paging_bootstrap pagination"><ul><li class="prev disabled"><a href="#">← Previous</a></li><li class="active"><a href="#">1</a></li><li><a href="#">2</a></li><li><a href="#">3</a></li><li><a href="#">4</a></li><li class="next"><a href="#">Next → </a></li></ul></div></div></div></div>            
 					</div>
 				</div>
-
+		</div>
 	@stop
  
