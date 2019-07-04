@@ -2,7 +2,7 @@
 @extends('admin.layouts.default')
 @section('admincontent')
   
-
+<a href="http://127.0.0.1:8000/admin/customer/create" class="btn btn-primary btn-lg btn-block">Create New Customer</a>
 <div class="box-content">
             <table class="table table-striped table-bordered bootstrap-datatable datatable">
               <thead>
