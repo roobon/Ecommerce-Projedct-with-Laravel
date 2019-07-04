@@ -15,7 +15,7 @@ class PaymentController extends Controller
      */
     public function index()
     {   $payments = Payment::all();
-        return view('payment.index')->with('payment', $payments);
+        return view('admin.payment.index')->with('payment', $payments);
     }
 
     /**
@@ -25,7 +25,8 @@ class PaymentController extends Controller
      */
     public function create()
     {
-
+     $payments = Payment::all();
+     return view('admin.payment.create')->with('payments', $payments);
     }
 
     /**
@@ -36,7 +37,12 @@ class PaymentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $payment = new Payment;
+        $payment->payment_id = $request->payment_id;
+        $payment->payment_method = $request->payment_method;
+        $payment->payment_status = $request->payment_status;
+        $payment->save();
+        return view('admin.payment.create');
     }
 
     /**
