@@ -36,7 +36,21 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
+<<<<<<< HEAD
+        $data = new Category;
+
+
+         $data->category_name = $request->get('category_name');
+         $data->category_description = $request->get('category_description');
+         $data->publication_status = $request->get('publication_status');
+    
+
+        $data->save();
+
+        return redirect('admin/category');
+=======
         //
+>>>>>>> 0ae14efa6c3ea0c4ab68258149382d3a264948ea
     }
 
     /**
@@ -81,6 +95,9 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category = Category::find($id);
+        $category->delete();
+
+        return redirect('admin/category');
     }
 }
