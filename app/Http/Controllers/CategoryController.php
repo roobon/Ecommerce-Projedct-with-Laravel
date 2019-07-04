@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Category;
 
 class CategoryController extends Controller
 {
@@ -15,11 +14,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $allcategory = Category::all()->toArray();
-        
-        return view('admin.category.index', compact('allcategory'));
 
-        
+        return view('admin.category.index');
     }
 
     /**
@@ -40,6 +36,7 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
+<<<<<<< HEAD
         $data = new Category;
 
 
@@ -50,7 +47,10 @@ class CategoryController extends Controller
 
         $data->save();
 
-        return view('admin.category.create');
+        return redirect('admin/category');
+=======
+        //
+>>>>>>> 0ae14efa6c3ea0c4ab68258149382d3a264948ea
     }
 
     /**
@@ -70,12 +70,9 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
-        
-        $category = Category::find($id);
-
-        return view('admin.category.edit' , compact('category', 'id'));
+        return view('admin.category.edit');
     }
 
     /**
@@ -87,15 +84,7 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = Category::find($id);
-
-
-         $data->category_name = $request->get('category_name');
-         $data->category_description = $request->get('category_description');
-         $data->publication_status = $request->get('publication_status');
-    
-
-        $data->save();
+        //
     }
 
     /**
@@ -106,6 +95,9 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category = Category::find($id);
+        $category->delete();
+
+        return redirect('admin/category');
     }
 }
