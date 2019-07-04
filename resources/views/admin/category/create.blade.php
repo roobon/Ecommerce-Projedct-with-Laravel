@@ -11,7 +11,8 @@
 						</div>
 					</div>
 					<div class="box-content">
-						<form class="form-horizontal">
+						<form class="form-horizontal" method="post" action="{{url('admin/category')}}">
+							{{csrf_field()}}
 							<fieldset>
 						
 							  <div class="control-group ">
