@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Shippings;
 
 class ShippingController extends Controller
 {
@@ -14,10 +15,9 @@ class ShippingController extends Controller
      */
     public function index()
     {
-        $allShipping=Shipping::all();   
+        $allShipping=Shippings::all();   
 
-        
-        return view('admin.shipping.index', compact('allShipping'));
+        return view('admin.shipping.index')->with('allShipping', $allShipping);
     }
 
     /**
@@ -27,7 +27,8 @@ class ShippingController extends Controller
      */
     public function create()
     {
-        //
+        $shipping = Shippings::all();
+        return view('admin.shipping.create')->with('shipping', $shipping);
     }
 
     /**
@@ -38,7 +39,15 @@ class ShippingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       $shipp = new Shippings;
+
+       $shipp->shipping_first_name = $request->shipping_first_name;//get('title')
+       $shipp->shipping_last_name = $request->shipping_last_name;
+       $shipp->shipping_address = $request->shipping_address;
+       $shipp->shipping_telephone = $request->shipping_telephone;
+       $shipp->shipping_email = $request->shipping_email;
+
+       $shipp->save();
     }
 
     /**
