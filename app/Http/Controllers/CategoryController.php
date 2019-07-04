@@ -50,7 +50,7 @@ class CategoryController extends Controller
 
         $data->save();
 
-        return view('admin.category.create');
+        return redirect('admin/category');
     }
 
     /**
@@ -106,6 +106,9 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category = Category::find($id);
+        $category->delete();
+
+        return redirect('admin/category');
     }
 }
