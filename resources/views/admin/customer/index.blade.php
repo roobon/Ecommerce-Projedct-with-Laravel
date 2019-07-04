@@ -22,23 +22,19 @@
                 <td class="center">{{$customer['email_address']}}</td>
                 <td class="center">{{$customer['telephone']}}</td>
                 <td class="center">
-                  <a class="btn btn-success" href="#">
-                    <i class="halflings-icon white zoom-in"></i>  
-                  </a>
-                  <a class="btn btn-info" href="#">
-                    <i class="halflings-icon white edit"></i>  
-                  </a>
+                  <form  method="post" action="{{action('CustomerController@destroy', $customer['customer_id'])}}">
+                    
+                    <a class="btn btn-success" href="#">
+                      <i class="halflings-icon white zoom-in"></i>  
+                    </a>
+                    <a class="btn btn-info" href="#">
+                      <i class="halflings-icon white edit"></i>  
+                    </a>
 
-                  <span class="btn btn-danger">
-                    <i class="halflings-icon white trash">
-                       <form  method="post" action="{{action('CustomerController@destroy', $customer['customer_id'])}}">
-                          {{csrf_field()}}
-                          <input name="_method" type="hidden" value="DELETE">
-                          <button class="halflings-icon white trash " type="submit"></button>
-                        </form>
-                    </i>
-                  </span> 
-
+                      {{csrf_field()}}
+                      <input name="_method" type="hidden" value="DELETE">
+                      <button class="btn btn-danger" type="submit"><i class="halflings-icon white trash"></i></button>
+                  </form>
                 </td>
               </tr>
                @endforeach
