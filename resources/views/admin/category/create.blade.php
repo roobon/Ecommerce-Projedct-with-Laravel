@@ -12,9 +12,8 @@
 					</div>
 					<div class="box-content">
 						<form class="form-horizontal" method="post" action="{{url('admin/category')}}">
-							{{csrf_field()}}
 							<fieldset>
-						
+						{{csrf_field()}}
 							  <div class="control-group ">
 								<label style="color:black" class="control-label" for="prependedInput">category name</label>
 								<div class="controls">
