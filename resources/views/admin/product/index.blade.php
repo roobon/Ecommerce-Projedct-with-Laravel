@@ -32,12 +32,17 @@
                   <a class="btn btn-success" href="#">
                     <i class="halflings-icon white zoom-in"></i>  
                   </a>
-                  <a class="btn btn-info" href="{{ URL::to('admin/product/' . $product->id . '/edit') }}">
-                    <i class="halflings-icon white edit"></i>  
-                  </a>
-                  <a class="btn btn-danger" href="{{url('product.destroy')}}">
-                    <i class="halflings-icon white trash"></i> 
-                  </a>
+                  <a href="{{action('ProductController@edit', $product['id'])}}" class="btn btn-warning"><i class="halflings-icon white edit"></i> </a>
+                  
+                  <form action="{{action('ProductController@destroy', $product['id'])}}" method="post">
+                  {{csrf_field()}}
+                <input name="_method" type="hidden" value="DELETE">
+                 <button class="btn btn-danger" type="submit">Delete</button>
+                </form>
+                 
+                  
+                    
+                  
                 </td>
               </tr>
               @endforeach
