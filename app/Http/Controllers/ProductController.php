@@ -43,7 +43,24 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // store
+        $new = new Product;
+        $new->category_id       = Input::get('category_id');
+        $new->manufacturer_id       = Input::get('manufacturer_id');
+        $new->product_name       = Input::get('product_name');
+        $new->product_short_description       = Input::get('product_short_description');
+        $new->product_long_description       = Input::get('product_long_description');
+        $new->product_price       = Input::get('product_price');
+        $new->product_image       = Input::get('product_image');
+        $new->product_size       = Input::get('product_size');
+        $new->product_color       = Input::get('product_color');
+        $new->publication_status       = Input::get('publication_status');
+       
+        $new->save();
+
+        // redirect
+        Session::flash('message', 'Successfully created nerd!');
+        return Redirect::to('admin/product');
     }
 
     /**
