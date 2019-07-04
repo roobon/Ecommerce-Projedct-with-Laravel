@@ -28,6 +28,7 @@
                   <a class="btn btn-info" href="#">
                     <i class="halflings-icon white edit"></i>  
                   </a>
+<<<<<<< HEAD
                   <span class="btn btn-danger">
                     <i class="halflings-icon white trash">
                        <form  method="post" action="{{action('CustomerController@destroy', $customer['customer_id'])}}">
@@ -38,6 +39,11 @@
                     </i>
                   </span> 
                   
+=======
+                  <a class="btn btn-danger" href="#">
+                    <i class="halflings-icon white trash"></i> 
+                  </a>
+>>>>>>> b434a28735fbde7926215b2faffe7de41b905c62
                 </td>
               </tr>
                @endforeach
