@@ -11,7 +11,7 @@
 						</div>
 					</div>
 					<div class="box-content">
-						<form class="form-horizontal">
+						<form class="form-horizontal" action="{{route('manufacture.store)}}" method="post">
 							<fieldset>
 						
 							  <div class="control-group ">
@@ -27,7 +27,7 @@
                                 
                               
                                     <div class="col-sm-10">
-                                        <textarea name="category_description" id="textarea" class="form-control" rows="3" required="required"></textarea>
+                                        <textarea name="description" id="textarea" class="form-control" rows="3" required="required"></textarea>
                                     </div>
                                 
                                 
