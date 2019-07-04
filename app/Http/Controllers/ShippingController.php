@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Customer;
+use App\Shippings;
 
-class CustomerController extends Controller
+class ShippingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,9 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        $allcustomer = Customer::all()->toArray();
-        return view('admin.customer.index', compact('allcustomer'));
-        
+        $allShipping=Shippings::all();   
+
+        return view('admin.shipping.index')->with('allShipping', $allShipping);
     }
 
     /**
@@ -27,7 +27,8 @@ class CustomerController extends Controller
      */
     public function create()
     {
-       return view('admin.customer.create');
+        $shipping = Shippings::all();
+        return view('admin.shipping.create')->with('shipping', $shipping);
     }
 
     /**
@@ -38,16 +39,15 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        $customer = new Customer;
-        $customer->first_name = $request->get('first_name');
-        $customer->last_name = $request->get('last_name');
-        $customer->email_address = $request->get('email_address');
-        $customer->password = $request->get('password');
-        $customer->telephone = $request->get('telephone');
-        
-        
-        $customer->save();
-        return redirect('admin/customer');
+       $shipp = new Shippings;
+
+       $shipp->shipping_first_name = $request->shipping_first_name;//get('title')
+       $shipp->shipping_last_name = $request->shipping_last_name;
+       $shipp->shipping_address = $request->shipping_address;
+       $shipp->shipping_telephone = $request->shipping_telephone;
+       $shipp->shipping_email = $request->shipping_email;
+
+       $shipp->save();
     }
 
     /**
