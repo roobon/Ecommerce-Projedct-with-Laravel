@@ -1,6 +1,7 @@
 @extends('admin.layouts.default')
 
 @section('admincontent')
+<div></div>
 	<div class="row-fluid">	
 
 				<a class="quick-button metro yellow span2">
@@ -31,6 +32,18 @@
 					<i class="icon-calendar"></i>
 					<p>Calendar</p>
 				</a>
+
+				<a class="quick-button metro yellow span2">
+					<i class="icon-group"></i>
+					<p>Customer</p>
+					<span class="badge">237</span>
+				</a>
+
+				<a class="quick-button metro yellow span2">
+					<i class="icon-group"></i>
+					<p>Manufacturer</p>
+					<span class="badge">237</span>
+				</a>
 				
 				<div class="clearfix"></div>
 								
@@ -38,7 +51,7 @@
 			<br><!--/row-->
 
 			<div class="">
-				<h1 style="text-align: center; color:blue;">Welcome to Admin Panel</h1>
+				
 
 				
 				<img class="img-fluid" style="width:100%;" src="{{ URL::to('backend/img/administrator.jpg') }}">
