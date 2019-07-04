@@ -11,7 +11,7 @@
 						</div>
 					</div>
 					<div class="box-content">
-						<form class="form-horizontal">
+						<form class="form-horizontal" action="{{ route('product.store') }}">
                             <fieldset>
                             <div class="control-group ">
 								<label style="color: black" class="control-label" for="selectError4">Select Category</label>
