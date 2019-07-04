@@ -33,17 +33,7 @@
 					<p>Calendar</p>
 				</a>
 
-				<a class="quick-button metro yellow span2">
-					<i class="icon-group"></i>
-					<p>Customer</p>
-					<span class="badge">237</span>
-				</a>
-
-				<a class="quick-button metro yellow span2">
-					<i class="icon-group"></i>
-					<p>Manufacturer</p>
-					<span class="badge">237</span>
-				</a>
+				
 				
 				<div class="clearfix"></div>
 								
