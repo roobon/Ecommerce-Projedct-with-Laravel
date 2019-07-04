@@ -40,8 +40,8 @@
 			<li>
 				<a class="dropmenu" href="#"><i class="halflings-icon gift"></i><span class="hidden-tablet">Product</span></a>
 				<ul>
-					<li><a class="submenu" href="{{url('admin/category')}}"><i class="halflings-icon gift"></i><span class="hidden-tablet">All Product</span></a></li>
-					<li><a class="submenu" href="{{url('admin/category/create')}}"><i class="halflings-icon gift"></i><span class="hidden-tablet">New Product</span></a></li>
+					<li><a class="submenu" href="{{url('admin/product')}}"><i class="halflings-icon gift"></i><span class="hidden-tablet">All Product</span></a></li>
+					<li><a class="submenu" href="{{url('admin/product/create')}}"><i class="halflings-icon gift"></i><span class="hidden-tablet">New Product</span></a></li>
 				</ul>
 			</li>
 			<li>
