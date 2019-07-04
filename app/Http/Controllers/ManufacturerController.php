@@ -4,9 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Customer;
 
-class CustomerController extends Controller
+class ManufacturerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +14,7 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        $allcustomer = Customer::all()->toArray();
-        return view('admin.customer.index', compact('allcustomer'));
-        
+        //
     }
 
     /**
@@ -27,7 +24,7 @@ class CustomerController extends Controller
      */
     public function create()
     {
-       return view('admin.customer.create');
+        //
     }
 
     /**
@@ -38,16 +35,7 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        $customer = new Customer;
-        $customer->first_name = $request->get('first_name');
-        $customer->last_name = $request->get('last_name');
-        $customer->email_address = $request->get('email_address');
-        $customer->password = $request->get('password');
-        $customer->telephone = $request->get('telephone');
-        
-        
-        $customer->save();
-        return redirect('admin/customer');
+        //
     }
 
     /**
