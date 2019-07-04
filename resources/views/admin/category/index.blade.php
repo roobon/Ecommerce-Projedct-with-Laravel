@@ -10,44 +10,49 @@
 							<a href="#" class="btn-close"><i class="halflings-icon remove"></i></a>
 						</div>
 					</div>
-
-
-
 					<div class="box-content">
 						<table class="table table-striped table-bordered bootstrap-datatable datatable">
 						  <thead>
 							  <tr>
 								  <th>Category ID</th>
 								  <th>Category Name</th>
-								  <th>Category Description</th>
 								  <th>Publication Status</th>
 								  <th>Created at</th>
 								  <th>Updated at</th>
-								  <th>Actions</th>
+								  <th colspan="2">Actions</th>
 							  </tr>
 						  </thead>   
 						  <tbody>
-						  	@foreach($allcategory as $category)
 							<tr>
+<<<<<<< HEAD
 								<td class="center">{{$category['id']}}</td>
 								<td class="center">{{$category['category_name']}}</td>
 								<td class="center">{{$category['category_description']}}</td>
 								<td class="center">{{$category['publication_status']}}</td>
 								<td class="center">{{$category['created_at']}}</td>
 								<td class="center">{{$category['updated_at']}}</td>
+								 
+=======
+								<td class="center"></td>
+								<td class="center"></td>
+								<td class="center"></td>
+								<td class="center"></td>
+								<td class="center"></td>
+>>>>>>> 0ae14efa6c3ea0c4ab68258149382d3a264948ea
 								<td class="center">
-									<a class="btn btn-success" href="#">
+									<form action="{{action('CategoryController@destroy', $category['id'])}}" method="post">
+										{{csrf_field()}}
+										<a class="btn btn-success" href="#">
 										<i class="halflings-icon white zoom-in"></i>  
 									</a>
-									<a class="btn btn-info" href="{{action('CategoryController@edit', $category['id'])}}">
+									<a class="btn btn-info" href="#">
 										<i class="halflings-icon white edit"></i>  
 									</a>
-									<a class="btn btn-danger" href="#">
-										<i class="halflings-icon white trash"></i> 
-									</a>
+										<input type="hidden" name="_method" value="DELETE">
+										<button class="btn btn-danger" type="submit"><i class="halflings-icon white trash"></i></button>
+									</form>
 								</td>
 							</tr>
-							@endforeach
 		
 						  </tbody>
 					  </table>            
