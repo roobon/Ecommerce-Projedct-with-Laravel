@@ -1,6 +1,6 @@
-@extends('admin.layouts.default)
+@extends('admin.layouts.default')
 @section('admincontent')
-    <table>
+    <table class="table table-bordered">
         <tr>
             <th>ID</th>
             <th>Payment Methed</th>
