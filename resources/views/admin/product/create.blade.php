@@ -19,8 +19,8 @@
 								<div class="controls">
 								  <select id="selectError3" name="category_id" >
 									<option value="" selected hidden>select one</option>
-                                    @foreach($allProduct as $product)
-									<option value="{{$product->category_id}}">{{$product->category->category_name}}</option>
+                                    @foreach($allCategory as $Cat)
+									<option value="{{$Cat->id}}">{{$Cat->category_name}}</option>
                                     @endforeach
 								  </select>
 								</div>
@@ -30,8 +30,8 @@
 								<div class="controls">
 								  <select id="selectError3" name="manufacturer_id" >
 									<option value="" selected hidden>select one</option>
-                                    @foreach($allProduct as $product)
-									<option value="{{$product->manufacturer_id}}">{{$product->manufacturer->manufacturer_name}}</option>
+                                    @foreach($allManufacturer as $manu)
+									<option value="{{$manu->id}}">{{$manu->manufacturer_name}}</option>
                                     @endforeach
 								  </select>
 								</div>
