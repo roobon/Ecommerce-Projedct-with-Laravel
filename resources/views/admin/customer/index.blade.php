@@ -29,7 +29,13 @@
                     <i class="halflings-icon white edit"></i>  
                   </a>
                   <a class="btn btn-danger" href="#">
-                    <i class="halflings-icon white trash"></i> 
+                    <i class="halflings-icon white trash">
+                       <form  method="post" action="{{action('CustomerController@destroy', $customer['customer_id'])}}">
+                          {{csrf_field()}}
+                          <input name="_method" type="hidden" value="DELETE">
+                          <button class="halflings-icon white trash" type="submit"></button>
+                        </form>
+                    </i> 
                   </a>
                 </td>
               </tr>
