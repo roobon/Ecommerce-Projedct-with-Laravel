@@ -28,15 +28,16 @@
                   <a class="btn btn-info" href="#">
                     <i class="halflings-icon white edit"></i>  
                   </a>
-                  <a class="btn btn-danger" href="#">
+                  <span class="btn btn-danger">
                     <i class="halflings-icon white trash">
                        <form  method="post" action="{{action('CustomerController@destroy', $customer['customer_id'])}}">
                           {{csrf_field()}}
                           <input name="_method" type="hidden" value="DELETE">
-                          <button class="halflings-icon white trash" type="submit"></button>
+                          <button class="halflings-icon white trash " type="submit"></button>
                         </form>
-                    </i> 
-                  </a>
+                    </i>
+                  </span> 
+                  
                 </td>
               </tr>
                @endforeach
