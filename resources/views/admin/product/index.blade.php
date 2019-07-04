@@ -1,4 +1,4 @@
-index.blade.php
+
 @extends('admin.layouts.default')
 @section('admincontent')
   
@@ -32,7 +32,7 @@ index.blade.php
                   <a class="btn btn-success" href="#">
                     <i class="halflings-icon white zoom-in"></i>  
                   </a>
-                  <a class="btn btn-info" href="{{url('product.edit')}}">
+                  <a class="btn btn-info" href="{{ URL::to('admin/product/' . $product->id . '/edit') }}">
                     <i class="halflings-icon white edit"></i>  
                   </a>
                   <a class="btn btn-danger" href="{{url('product.destroy')}}">
