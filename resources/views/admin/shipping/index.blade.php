@@ -30,10 +30,10 @@
                   <a class="btn btn-success" href="#">
                     <i class="halflings-icon white zoom-in"></i>  
                   </a>
-                  <a class="btn btn-info" href="{{ URL::to('admin/product/' . $product->id . '/edit') }}">
+                  <a class="btn btn-info" href="{{ URL::to('admin/shipping/' . $shipping->id . '/edit') }}">
                     <i class="halflings-icon white edit"></i>  
                   </a>
-                  <a class="btn btn-danger" href="{{url('product.destroy')}}">
+                  <a class="btn btn-danger" href="{{url('shipping.destroy')}}">
                     <i class="halflings-icon white trash"></i> 
                   </a>
                 </td>

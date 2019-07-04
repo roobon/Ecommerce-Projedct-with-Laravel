@@ -48,6 +48,7 @@ class ShippingController extends Controller
        $shipp->shipping_email = $request->shipping_email;
 
        $shipp->save();
+       return view('admin.shipping.create');
     }
 
     /**

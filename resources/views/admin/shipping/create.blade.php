@@ -11,7 +11,7 @@
 						</div>
 					</div>
 					<div class="box-content">
-						<form class="form-horizontal" action="{{action('ShippingController@store')}}">
+						<form class="form-horizontal" action="{{action('ShippingController@store')}}" method="post">
 							{{csrf_field()}}
 							  <div class="control-group ">
 								<label style="color:black" class="control-label" for="prependedInput">First Name</label>
