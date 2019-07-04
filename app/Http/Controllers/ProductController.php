@@ -29,8 +29,10 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $allProduct=Product::all(); 
-        return view('admin.product.create',compact('allProduct'));
+        $allCategory=Category::all();
+        $allManufacturer=Manufacturer::all();
+        
+        return view('admin.product.create',compact('allCategory','allManufacturer'));
     }
 
     /**
@@ -78,8 +80,10 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit($id)
     {
+        $allCategory=Category::all();
+        $allManufacturer=Manufacturer::all();
        $product = Product::find($id);
 
         return view('admin.product.create', compact('product','id'));
@@ -92,7 +96,7 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request, $id)
     {
      
         $new = Product::find($id);
@@ -118,9 +122,9 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy($id)
     {
-         $new = Product::find($id);
+        $new = Product::find($id);
         $new->delete();
 
         return redirect('admin/product');
