@@ -5,6 +5,7 @@
             <th>ID</th>
             <th>Payment Methed</th>
             <th>Payment Status</th>
+            <th>Payment Date & Time</th>
             <th>Action</th>
         </tr>
         <tr>
@@ -14,13 +15,13 @@
             <td>{{$payment->payment_status}}</td>
             <td>{{$payment->payment_date_time}}</td>
                 <td>
-                    <a href="" class="btn btn-success">
+                    <a href="{{URL::to('admin/payment/show')}}" class="btn btn-success">
                         <i class="halflings-icon white zoom-in"></i>
                     </a>
-                    <a href="" class="btn btn-info">
+                    <a href="{{URL::to('admin/payment/edit')}}" class="btn btn-info">
                         <i class="halflings-icon white edit"></i>
                     </a>
-                    <a href="" class="btn btn-danger">
+                    <a href="{{URL::to('admin/payment/delete')}}" class="btn btn-danger">
                         <i class="halflings-icon white trash"></i>
                     </a>
                 </td>
