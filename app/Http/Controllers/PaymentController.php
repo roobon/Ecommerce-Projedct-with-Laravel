@@ -54,7 +54,8 @@ class PaymentController extends Controller
      */
     public function show($id)
     {
-        //
+        $payment = Payment::where('payment_id', $id);
+        return view('admin.payment.edit')->with('payment', $payment);
     }
 
     /**
