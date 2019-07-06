@@ -21,7 +21,7 @@
                 @foreach($allProduct as $product)
                 
               <tr>
-                <td><img src="{{url($product->product_image? 'Productimg/'.$product->product_image:'images/noimage.jpg')}}" alt="" class="img-responsive"></td>
+                <td><img src="{{url($product->product_image? 'Productimg/'.$product->product_image:'images/noimage.jpg')}}" alt="" class="img-responsive" style="max-height: 100px;"></td>
                 <td class="center">{{$product->product_name}}</td>
                 <td class="center">{{$product->manufacturer->manufacturer_name}}</td>
                 <td class="center">{{$product->category->category_name}}</td>
@@ -34,7 +34,7 @@
                   </a>
                   <a href="{{route('product.edit',$product->id)}}" class="btn btn-warning"><i class="halflings-icon white edit"></i> </a>
                   
-                  <form action="{{action('ProductController@destroy', $product['id'])}}" method="post">
+                  <form action="{{route('product.destroy',$product->id)}}" method="post">
                   {{csrf_field()}}
                 <input name="_method" type="hidden" value="DELETE">
                  <button class="btn btn-danger" type="submit">Delete</button>
