@@ -65,7 +65,7 @@ class PaymentController extends Controller
     public function edit($id)
     {
         $payment = Payment::find($id);
-        return view('admin.payment.edit')->with('payment', $payment);
+        return view('admin.payment.edit', compact('payment', 'id'));
     }
 
     /**
@@ -78,7 +78,6 @@ class PaymentController extends Controller
     public function update(Request $request, $id)
     {
         $payment = Payment::find($id);
-        $payment->payment_id = $request->payment_id;
         $payment->payment_method = $request->payment_method;
         $payment->payment_status = $request->payment_status;
         $payment->save();
@@ -93,6 +92,8 @@ class PaymentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $payment = Payment::find($id);
+        $payment->delete();
+        return redirect('admin/payment');
     }
 }
