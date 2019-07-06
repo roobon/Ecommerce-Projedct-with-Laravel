@@ -1,12 +1,9 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Customer;
-
-class CustomerController extends Controller
+use App\Shippings;
+class ShippingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,11 +12,9 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        $allcustomer = Customer::all()->toArray();
-        return view('admin.customer.index', compact('allcustomer'));
-        
+        $allShipping=Shippings::all();   
+        return view('admin.shipping.index')->with('allShipping', $allShipping);
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -27,9 +22,9 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        return view('admin.customer.create');
+        $shipping = Shippings::all();
+        return view('admin.shipping.create')->with('shipping', $shipping);
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -38,17 +33,15 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        $customer = new Customer;
-        $customer->first_name = $request->get('first_name');
-        $customer->last_name = $request->get('last_name');
-        $customer->email_address = $request->get('email_address');
-        $customer->password = $request->get('password');
-        $customer->telephone = $request->get('telephone');
-        
-        $customer->save();
-        return redirect('admin/customer');
+       $shipp = new Shippings;
+       $shipp->shipping_first_name = $request->shipping_first_name;//get('title')
+       $shipp->shipping_last_name = $request->shipping_last_name;
+       $shipp->shipping_address = $request->shipping_address;
+       $shipp->shipping_telephone = $request->shipping_telephone;
+       $shipp->shipping_email = $request->shipping_email;
+       $shipp->save();
+       return view('admin.shipping.create');
     }
-
     /**
      * Display the specified resource.
      *
@@ -59,7 +52,6 @@ class CustomerController extends Controller
     {
         //
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -68,11 +60,10 @@ class CustomerController extends Controller
      */
     public function edit($id)
     {
-        $customer = Customer::find($id);
+        $shipping = Shippings::find($id);
         
-        return view('admin.customer.edit', compact('customer','id'));
+        return view('admin.shipping.edit', compact('shipping','id'));
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -82,17 +73,8 @@ class CustomerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $customer = Customer::find($id);
-        $customer->first_name = $request->get('first_name');
-        $customer->last_name = $request->get('last_name');
-        $customer->email_address = $request->get('email_address');
-        $customer->password = $request->get('password');
-        $customer->password = $request->get('password');
-        $customer->telephone = $request->get('telephone');
-        $customer->save();
-        return redirect('admin/customer');
+        //
     }
-
     /**
      * Remove the specified resource from storage.
      *
@@ -101,9 +83,6 @@ class CustomerController extends Controller
      */
     public function destroy($id)
     {
-        $customer = Customer::find($id);
-        $customer->delete();
-
-        return redirect('admin/customer');
+        //
     }
 }
