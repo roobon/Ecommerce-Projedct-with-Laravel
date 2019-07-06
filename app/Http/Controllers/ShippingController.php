@@ -58,11 +58,11 @@ class ShippingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($shipping_id)
     {
-        $shipping = Shippings::find($id);
+        $shipping = Shippings::find($shipping_id);
         
-        return view('admin.shipping.edit', compact('shipping','id'));
+        return view('admin.shipping.edit', compact('shipping','shipping_id'));
     }
     /**
      * Update the specified resource in storage.
