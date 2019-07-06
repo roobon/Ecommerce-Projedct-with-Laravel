@@ -42,7 +42,7 @@ class PaymentController extends Controller
         $payment->payment_method = $request->payment_method;
         $payment->payment_status = $request->payment_status;
         $payment->save();
-        return view('admin.payment.create');
+        return redirect('admin/payment');
     }
 
     /**
@@ -82,8 +82,7 @@ class PaymentController extends Controller
         $payment->payment_method = $request->payment_method;
         $payment->payment_status = $request->payment_status;
         $payment->save();
-        Session::flash('message', 'Successfully update Successfully!');
-        return redirect('admin/payment/edit');
+        return redirect('admin/payment');
     }
 
     /**

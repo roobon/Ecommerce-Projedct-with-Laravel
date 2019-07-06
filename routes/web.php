@@ -23,7 +23,7 @@ Route::resource('admin/category', 'CategoryController');
 Route::resource('admin/customer', 'CustomerController');
 Route::resource('admin/product', 'ProductController');
 Route::resource('admin/manufacturer', 'ProductController');
-Route::resource('admin/order', 'ProductController');
+Route::resource('admin/order', 'OrderController');
 Route::resource('admin/payment', 'PaymentController');
 Route::resource('admin/shipping', 'ShippingController');
 Route::resource('admin/user', 'ProductController');
