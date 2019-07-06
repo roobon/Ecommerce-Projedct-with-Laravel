@@ -3,7 +3,7 @@
 <div class="row-fluid sortable ui-sortable">
 				<div class="box blue span12">
 					<div class="box-header" data-original-title="">
-						<h2><i class="halflings-icon edit"></i><span class="break"></span>create category</h2>
+						<h2><i class="halflings-icon edit"></i><span class="break"></span>Create Category</h2>
 						<div class="box-icon">
 							<a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a>
 							<a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
@@ -11,9 +11,9 @@
 						</div>
 					</div>
 					<div class="box-content">
-						<form class="form-horizontal">
+						<form class="form-horizontal" action="{{url('admin/category')}}" method="post">
+							{{csrf_field()}}
 							<fieldset>
-						
 							  <div class="control-group ">
 								<label style="color:black" class="control-label" for="prependedInput">category name</label>
 								<div class="controls">
