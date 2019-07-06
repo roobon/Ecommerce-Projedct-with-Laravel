@@ -4,9 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Category;
 
-class CategoryController extends Controller
+class ManufacturerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +14,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categorys = Category::all()->toArray();
-        return view('admin.category.index', compact('categorys'));
+         $manufacturer = Manufacturer::all()->toArray();
+
+        return view('manufacturer.index', compact('manufacturer'));
     }
 
     /**
@@ -26,7 +26,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.category.create');
+         return view('manufacturer.create');
     }
 
     /**
@@ -37,7 +37,13 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $manufacturer = new Crud([
+            'title' => $request->get('title'),
+            'post' => $request->get('post')
+        ]);
+
+        $manufacturer->save();
+        return redirect('/manufacturer');
     }
 
     /**
@@ -57,9 +63,11 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit()
+    public function edit($id)
     {
-        return view('admin.category.edit');
+        $manufacturer = Manufacturer::find($id);
+
+        return view('manufacturer.edit', compact('manufacturer','id'));
     }
 
     /**
@@ -71,7 +79,10 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $manufacturer->title = $request->get('title');
+        $manufacturer->post = $request->get('post');
+        $manufacturer->save();
+        return redirect('/manufacturer');
     }
 
     /**
@@ -82,6 +93,9 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $manufacturer =Manufacturer::find($id);
+        $manufacturer->delete();
+
+        return redirect('/manufacturer');
     }
 }
