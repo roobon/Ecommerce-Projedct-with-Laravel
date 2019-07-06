@@ -13,9 +13,9 @@
 					<div class="box-content">
 						<form class="form-horizontal"  action="{{action('CategoryController@update', $id)}}" method="post">
 							<fieldset>
-						{{csrf_field()}}
-						<input type="hidden" name="_method" value="PATCH">
-							  <div class="control-group ">
+							{{csrf_field()}}
+							<input type="hidden" name="_method" value="PATCH">
+							<div class="control-group ">
 								<label style="color:black" class="control-label" for="prependedInput">category name</label>
 								<div class="controls">
 								  <input name="category_name" value="{{$category->category_name}}" type="text" id="inputSuccess">
