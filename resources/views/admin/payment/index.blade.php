@@ -29,7 +29,7 @@
                     <a href="{{action('PaymentController@edit', $payment->payment_id)}}" class="btn btn-info">
                         <i class="halflings-icon white edit"></i>
                     </a>
-                    <a href="{{URL::to('admin/payment/delete')}}" class="btn btn-danger">
+                    <a href="{{action('PaymentController@destroy', $payment->payment_id)}}" class="btn btn-danger">
                         <i class="halflings-icon white trash"></i>
                     </a>
                 </td>
