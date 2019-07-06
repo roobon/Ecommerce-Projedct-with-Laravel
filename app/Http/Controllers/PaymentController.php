@@ -64,7 +64,7 @@ class PaymentController extends Controller
      */
     public function edit($id)
     {
-        $payment = Payment::find($id);
+//        $payment = Payment::find($id);
         return view('admin.payment.edit')->with('payment', $payment);
     }
 
@@ -82,8 +82,7 @@ class PaymentController extends Controller
         $payment->payment_method = $request->payment_method;
         $payment->payment_status = $request->payment_status;
         $payment->save();
-        Session::flash('message', 'Successfully update Successfully!');
-        return redirect('admin/payment/edit');
+        return redirect('admin/payment');
     }
 
     /**
