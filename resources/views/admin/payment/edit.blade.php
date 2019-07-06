@@ -13,7 +13,7 @@
                 </div>
             </div>
             <div class="box-content">
-                <form class="form-horizontal" method="post" action="{{action('PaymentController@update/{$id}')}}">
+                <form class="form-horizontal" method="post" action="{{action('PaymentController@update', $payment->payment_id)}}">
                     {{csrf_field()}}
                     <input type="hidden" name="_method" value="PUT">
                     <div class="control-group ">
