@@ -83,7 +83,7 @@
                               <div class="control-group ">
 								<label style="color:black" class="control-label" for="prependedInput">product_Price</label>
 								<div class="controls">
-								  <input name="product_price" type="text" id="inputSuccess" value="{{$product->product_Price}}">
+								  <input name="product_price" type="text" id="inputSuccess" value="{{$product->product_price}}">
 								  <!-- <span class="help-inline">Woohoo!</span> -->
 								</div>
 							  </div>
