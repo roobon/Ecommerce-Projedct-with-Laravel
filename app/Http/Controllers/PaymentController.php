@@ -42,7 +42,6 @@ class PaymentController extends Controller
         $payment->payment_method = $request->payment_method;
         $payment->payment_status = $request->payment_status;
         $payment->save();
-        Session::flash('message', 'Successfully created nerd!');
         return view('admin.payment.create');
     }
 
@@ -54,8 +53,7 @@ class PaymentController extends Controller
      */
     public function show($id)
     {
-        $payment = Payment::where('payment_id', $id);
-        return view('admin.payment.edit')->with('payment', $payment);
+        //
     }
 
     /**
