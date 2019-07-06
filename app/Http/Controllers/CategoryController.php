@@ -37,7 +37,13 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = new Category;
+        $data->category_name = $request->get('category_name');
+        $data->category_description = $request->get('category_description');
+        $data->publication_status = $request->get('publication_status');
+        $data->save();
+
+        return redirect('admin/category');
     }
 
     /**
@@ -57,9 +63,10 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit()
+    public function edit($id)
     {
-        return view('admin.category.edit');
+        $category = Category::find($id);
+        return view('admin.category.edit', compact('category', 'id'));
     }
 
     /**
@@ -71,7 +78,14 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $category = Category::find($id);
+        $category->category_name = $request->get('category_name');
+        $category->category_description = $request->get('category_description');
+        $category->publication_status = $request->get('publication_status');
+        $category->save();
+
+        return redirect('admin/category');
+
     }
 
     /**
@@ -82,6 +96,9 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category = Category::find($id);
+        $category->delete();
+
+        return redirect('admin/category');
     }
 }
