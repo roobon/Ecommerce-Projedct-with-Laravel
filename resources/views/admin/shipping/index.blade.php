@@ -29,7 +29,7 @@
                   <a class="btn btn-success" href="#">
                     <i class="halflings-icon white zoom-in"></i>  
                   </a>
-                  <a class="btn btn-info" href="{{action('ShippingController@edit', $shipping['id'])}}">
+                  <a class="btn btn-info" href="{{action('ShippingController@edit', $shipping['shipping_id'])}}">
                     <i class="halflings-icon white edit"></i>  
                   </a>
                   <a class="btn btn-danger" href="{{url('shipping.destroy')}}">
