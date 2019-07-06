@@ -1,9 +1,9 @@
 @extends('admin.layouts.default')
 @section('admincontent')
 <div class="row-fluid sortable ui-sortable">
-				<div class="box blue span12">
+				<div class="box blue span24">
 					<div class="box-header" data-original-title="">
-						<h2><i class="halflings-icon edit"></i><span class="break"></span>Add category</h2>
+						<h2><i class="halflings-icon edit"></i><span class="break"></span>Add Product</h2>
 						<div class="box-icon">
 							<a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a>
 							<a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
@@ -11,15 +11,16 @@
 						</div>
 					</div>
 					<div class="box-content">
-						<form class="form-horizontal" action="{{ route('product.store') }}">
+						<form class="form-horizontal" method="post" action="{{ route('product.store') }}" enctype="multipart/form-data">
+							 {{csrf_field()}}
                             <fieldset>
                             <div class="control-group ">
 								<label style="color: black" class="control-label" for="selectError4">Select Category</label>
 								<div class="controls">
-								  <select id="selectError3" name="publication_status" >
+								  <select id="selectError3" name="category_id" >
 									<option value="" selected hidden>select one</option>
-                                    @foreach($allProduct as $product)
-									<option value="{{$product->category_id}}">{{$product->category->category_name}}</option>
+                                    @foreach($allCategory as $Cat)
+									<option value="{{$Cat->id}}">{{$Cat->category_name}}</option>
                                     @endforeach
 								  </select>
 								</div>
@@ -27,10 +28,10 @@
                               <div class="control-group ">
 								<label style="color: black" class="control-label" for="selectError3">Select manufacturer</label>
 								<div class="controls">
-								  <select id="selectError3" name="publication_status" >
+								  <select id="selectError3" name="manufacturer_id" >
 									<option value="" selected hidden>select one</option>
-                                    @foreach($allProduct as $product)
-									<option value="{{$product->manufacturer_id}}">{{$product->manufacturer->manufacturer_name}}</option>
+                                    @foreach($allManufacturer as $manu)
+									<option value="{{$manu->id}}">{{$manu->manufacturer_name}}</option>
                                     @endforeach
 								  </select>
 								</div>
@@ -75,8 +76,9 @@
                               
                               <div class="control-group ">
 								<label style="color:black" class="control-label" for="prependedInput">product_image</label>
+								
 								<div class="controls">
-								  <input name="product_image" type="text" id="inputSuccess">
+									<input name="product_image" id="" type="file" >								  
 								  <!-- <span class="help-inline">Woohoo!</span> -->
 								</div>
 							  </div>
