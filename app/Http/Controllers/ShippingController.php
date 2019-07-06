@@ -1,11 +1,9 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
-class ManufacturerController extends Controller
+use App\Shippings;
+class ShippingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,11 +12,9 @@ class ManufacturerController extends Controller
      */
     public function index()
     {
-         $manufacturer = Manufacturer::all()->toArray();
-
-        return view('manufacturer.index', compact('manufacturer'));
+        $allShipping=Shippings::all();   
+        return view('admin.shipping.index')->with('allShipping', $allShipping);
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -26,9 +22,9 @@ class ManufacturerController extends Controller
      */
     public function create()
     {
-         return view('manufacturer.create');
+        $shipping = Shippings::all();
+        return view('admin.shipping.create')->with('shipping', $shipping);
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -37,15 +33,15 @@ class ManufacturerController extends Controller
      */
     public function store(Request $request)
     {
-        $manufacturer = new Crud([
-            'title' => $request->get('title'),
-            'post' => $request->get('post')
-        ]);
-
-        $manufacturer->save();
-        return redirect('/manufacturer');
+       $shipp = new Shippings;
+       $shipp->shipping_first_name = $request->shipping_first_name;//get('title')
+       $shipp->shipping_last_name = $request->shipping_last_name;
+       $shipp->shipping_address = $request->shipping_address;
+       $shipp->shipping_telephone = $request->shipping_telephone;
+       $shipp->shipping_email = $request->shipping_email;
+       $shipp->save();
+       return view('admin.shipping.create');
     }
-
     /**
      * Display the specified resource.
      *
@@ -56,7 +52,6 @@ class ManufacturerController extends Controller
     {
         //
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -65,11 +60,10 @@ class ManufacturerController extends Controller
      */
     public function edit($id)
     {
-        $manufacturer = Manufacturer::find($id);
-
-        return view('manufacturer.edit', compact('manufacturer','id'));
+        $shipping = Shippings::find($id);
+        
+        return view('admin.shipping.edit', compact('shipping','id'));
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -79,12 +73,8 @@ class ManufacturerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $manufacturer->title = $request->get('title');
-        $manufacturer->post = $request->get('post');
-        $manufacturer->save();
-        return redirect('/manufacturer');
+        //
     }
-
     /**
      * Remove the specified resource from storage.
      *
@@ -93,9 +83,6 @@ class ManufacturerController extends Controller
      */
     public function destroy($id)
     {
-        $manufacturer =Manufacturer::find($id);
-        $manufacturer->delete();
-
-        return redirect('/manufacturer');
+        //
     }
 }

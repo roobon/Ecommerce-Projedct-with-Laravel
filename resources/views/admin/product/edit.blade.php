@@ -21,7 +21,7 @@
 						</div>
 					</div>
 					<div class="box-content">
-						<form class="form-horizontal" action="{{route('product.update', ['id' => $product->id])}}" method="post">
+						<form class="form-horizontal" action="{{route('product.update', ['id' => $product->id])}}" method="post" enctype="multipart/form-data">
                             <fieldset>
                             	{{csrf_field()}}
                             	<input name="_method" type="hidden" value="PATCH">
@@ -29,7 +29,7 @@
                             <div class="control-group ">
 								<label style="color: black" class="control-label" for="selectError4">Select Category</label>
 								<div class="controls">
-								  <select id="selectError3" name="publication_status" >
+								  <select id="selectError3" name="category_id" >
 									<option value="" selected hidden>select one</option>
                                     @foreach($allCategory as $Cat)
 									<option value="{{$Cat->id}}" {{( $Cat->id == $product->category_id) ? 'selected' : ''   }}  >{{$Cat->category_name}}</option>
@@ -89,11 +89,13 @@
 							  </div>
                               
                               <div class="control-group ">
-								<label style="color:black" class="control-label" for="prependedInput">product_image</label>
+                              	<label style="color:black" class="control-label" for="prependedInput">product_image</label>
+								
 								<div class="controls">
-								  <input name="product_image" type="text" id="inputSuccess">
+									<input name="product_image" id="" type="file" >								  
 								  <!-- <span class="help-inline">Woohoo!</span> -->
 								</div>
+								
 							  </div>
                               <div class="control-group ">
 								<label style="color:black" class="control-label" for="prependedInput">product_size</label>
