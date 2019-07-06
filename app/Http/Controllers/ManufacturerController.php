@@ -14,7 +14,9 @@ class ManufacturerController extends Controller
      */
     public function index()
     {
-        //
+         $manufacturer = Manufacturer::all()->toArray();
+
+        return view('manufacturer.index', compact('manufacturer'));
     }
 
     /**
@@ -24,7 +26,7 @@ class ManufacturerController extends Controller
      */
     public function create()
     {
-        //
+         return view('manufacturer.create');
     }
 
     /**
@@ -35,7 +37,13 @@ class ManufacturerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $manufacturer = new Crud([
+            'title' => $request->get('title'),
+            'post' => $request->get('post')
+        ]);
+
+        $manufacturer->save();
+        return redirect('/manufacturer');
     }
 
     /**
@@ -57,7 +65,9 @@ class ManufacturerController extends Controller
      */
     public function edit($id)
     {
-        //
+        $manufacturer = Manufacturer::find($id);
+
+        return view('manufacturer.edit', compact('manufacturer','id'));
     }
 
     /**
@@ -69,7 +79,10 @@ class ManufacturerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $manufacturer->title = $request->get('title');
+        $manufacturer->post = $request->get('post');
+        $manufacturer->save();
+        return redirect('/manufacturer');
     }
 
     /**
@@ -80,6 +93,9 @@ class ManufacturerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $manufacturer =Mmanufacturer::find($id);
+        $manufacturer->delete();
+
+        return redirect('/manufacturer');
     }
 }
