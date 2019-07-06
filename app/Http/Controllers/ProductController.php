@@ -7,6 +7,7 @@ use App\Category;
 use App\Manufacturer;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use File;
 
 class ProductController extends Controller
 {
@@ -141,8 +142,10 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy($id)
     {
-        //
+       $new = Product::find($id);
+        $new->delete();
+       return Redirect()->route('product.index');
     }
 }
