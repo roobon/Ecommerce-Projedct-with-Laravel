@@ -13,6 +13,7 @@
 					<div class="box-content">
 						<form class="form-horizontal" action="{{action('ShippingController@update', $shipping_id)}}" method="post">
 							{{csrf_field()}}
+							<input type="hidden" name="_method" value="PUT">
 							  <div class="control-group ">
 								<label style="color:black" class="control-label" for="prependedInput">First Name</label>
 								<div class="controls">

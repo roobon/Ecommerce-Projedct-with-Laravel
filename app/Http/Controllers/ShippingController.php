@@ -62,7 +62,7 @@ class ShippingController extends Controller
     {
         $shipping = Shippings::find($shipping_id);
         
-        return view('admin.shipping.edit', compact('shipping','shipping_id'));
+        return view('admin.shipping.edit', compact('shipping'));
     }
     /**
      * Update the specified resource in storage.
