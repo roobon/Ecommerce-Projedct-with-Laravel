@@ -16,6 +16,7 @@
 							  <tr>
 								  <th>Category ID</th>
 								  <th>Category Name</th>
+								  <th>Catagory Description</th>
 								  <th>Publication Status</th>
 								  <th>Created at</th>
 								  <th>Updated at</th>
