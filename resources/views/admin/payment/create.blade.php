@@ -13,15 +13,8 @@
                 </div>
             </div>
             <div class="box-content">
-        <form class="form-horizontal" method="post" action="{{url('/create')}}">
+        <form class="form-horizontal" method="post" action="{{action('PaymentController@store')}}">
             {{csrf_field()}}
-            <div class="control-group ">
-                <label style="color: black" class="control-label" for="selectError4">Payment ID</label>
-                <div class="controls">
-                    <input name="payment_id" type="text" id="inputSuccess">
-                    <!-- <span class="help-inline">Woohoo!</span> -->
-                </div>
-            </div>
                 <div class="control-group ">
                     <label style="color: black" class="control-label" for="selectError4">Payment Method</label>
                     <div class="controls">
@@ -35,7 +28,11 @@
                 <div class="controls">
 
                     <div class="col-sm-10">
-                        <textarea name="payment_status" id="textarea" class="form-control" rows="3" required="required"></textarea>
+                        <select name="payment_status" id="">
+                            <option value="" selected hidden>Select One</option>
+                            <option value="1">Active</option>
+                            <option value="0">InActive</option>
+                        </select>
                     </div>
 
 

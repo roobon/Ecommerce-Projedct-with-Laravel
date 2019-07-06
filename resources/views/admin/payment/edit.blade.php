@@ -13,41 +13,36 @@
                 </div>
             </div>
             <div class="box-content">
-        <form class="form-horizontal" method="post" action="{{url('/edit')}}">
-            {{csrf_field()}}
-            <div class="control-group ">
-                <label style="color: black" class="control-label" for="selectError4">Payment ID</label>
-                <div class="controls">
-                    <input name="payment_id" type="text" id="inputSuccess">
-                    <!-- <span class="help-inline">Woohoo!</span> -->
-                </div>
-            </div>
-                <div class="control-group ">
-                    <label style="color: black" class="control-label" for="selectError4">Payment Method</label>
-                    <div class="controls">
-                        <input name="payment_method" type="text" id="inputSuccess">
-                        <!-- <span class="help-inline">Woohoo!</span> -->
-                    </div>
-                </div>
-
-            <div class="control-group ">
-                <label style="color: black" class="control-label" for="input">Payment Status</label>
-                <div class="controls">
-
-                    <div class="col-sm-10">
-                        <textarea name="payment_status" id="textarea" class="form-control" rows="3" required="required"></textarea>
+                <form class="form-horizontal" method="post" action="{{action('PaymentController@edit')}}">
+                    {{csrf_field()}}
+                    <div class="control-group ">
+                        <label style="color: black" class="control-label" for="selectError4">Payment Method</label>
+                        <div class="controls">
+                            <input name="payment_method" type="text" id="inputSuccess">
+                            <!-- <span class="help-inline">Woohoo!</span> -->
+                        </div>
                     </div>
 
+                    <div class="control-group ">
+                        <label style="color: black" class="control-label" for="input">Payment Status</label>
+                        <div class="controls">
 
-                    <!-- <span class="help-inline">Woohoo!</span> -->
-                </div>
+                            <div class="col-sm-10">
+                                <select name="payment_status" id="">
+                                    <option value="" selected hidden>Select One</option>
+                                    <option value="1">Active</option>
+                                    <option value="0">InActive</option>
+                                </select>
+                            </div>
+                            <!-- <span class="help-inline">Woohoo!</span> -->
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                        <button class="btn">Cancel</button>
+                    </div>
+                </form>
             </div>
-            <div class="form-actions">
-                <button type="submit" class="btn btn-primary">Update</button>
-                <button class="btn">Cancel</button>
-            </div>
-        </form>
-    </div>
         </div>
-</div>
+    </div>
 @endsection
