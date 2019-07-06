@@ -13,7 +13,7 @@
                 </div>
             </div>
             <div class="box-content">
-                <form class="form-horizontal" method="post" action="{{action('PaymentController@store')}}">
+                <form class="form-horizontal" method="post" action="{{action('PaymentController@edit')}}">
                     {{csrf_field()}}
                     <div class="control-group ">
                         <label style="color: black" class="control-label" for="selectError4">Payment Method</label>
