@@ -11,9 +11,10 @@
 						</div>
 					</div>
 					<div class="box-content">
-						<form class="form-horizontal">
+						<form class="form-horizontal" action="{{action('CategoryController@update')}}" method="post">
+							{{csrf_field()}}
 							<fieldset>
-						
+							<input type="hidden" name="_method" value="PATCH">
 							  <div class="control-group ">
 								<label style="color:black" class="control-label" for="prependedInput">category name</label>
 								<div class="controls">
