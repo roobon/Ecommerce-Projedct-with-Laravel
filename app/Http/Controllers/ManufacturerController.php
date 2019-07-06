@@ -93,7 +93,7 @@ class ManufacturerController extends Controller
      */
     public function destroy($id)
     {
-        $manufacturer =Mmanufacturer::find($id);
+        $manufacturer =Manufacturer::find($id);
         $manufacturer->delete();
 
         return redirect('/manufacturer');
