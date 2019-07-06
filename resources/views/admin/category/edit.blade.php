@@ -11,14 +11,14 @@
 						</div>
 					</div>
 					<div class="box-content">
-						<form class="form-horizontal" action="{{action('CategoryController@update')}}" method="post">
+						<form class="form-horizontal" action="{{action('CategoryController@update', $id)}}" method="post">
 							{{csrf_field()}}
 							<fieldset>
 							<input type="hidden" name="_method" value="PATCH">
 							  <div class="control-group ">
 								<label style="color:black" class="control-label" for="prependedInput">category name</label>
 								<div class="controls">
-								  <input name="category_name" type="text" id="inputSuccess">
+								  <input name="category_name" type="text" id="inputSuccess" value="{{$category->category_name}}">
 								  <!-- <span class="help-inline">Woohoo!</span> -->
 								</div>
 							  </div>
@@ -28,7 +28,7 @@
                                 
                               
                                     <div class="col-sm-10">
-                                        <textarea name="category_description" id="textarea" class="form-control" rows="3" required="required"></textarea>
+                                        <textarea name="category_description" id="textarea" class="form-control" rows="3" required="required">{{$category->category_description}}</textarea>
                                     </div>
                                 
                                 
@@ -40,7 +40,7 @@
 							  <div class="control-group ">
 								<label style="color: black" class="control-label" for="selectError3">publication status</label>
 								<div class="controls">
-								  <select id="selectError3" name="publication_status" >
+								  <select id="selectError3" name="publication_status">
 									<option value="" selected hidden>select one</option>
 									<option value="1">published</option>
 									<option value="0">draft</option>
