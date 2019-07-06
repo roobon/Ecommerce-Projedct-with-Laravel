@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Payment;
 use App\Http\Controllers\Controller;
 
-class PaymentController extends Controller
+class ManufacturerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +13,10 @@ class PaymentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   $payments = Payment::all();
-        return view('admin.payment.index')->with('payments', $payments);
+    {
+         $manufacturer = Manufacturer::all()->toArray();
+
+        return view('manufacturer.index', compact('manufacturer'));
     }
 
     /**
@@ -25,8 +26,7 @@ class PaymentController extends Controller
      */
     public function create()
     {
-     $payments = Payment::all();
-     return view('admin.payment.create')->with('payments', $payments);
+         return view('manufacturer.create');
     }
 
     /**
@@ -37,12 +37,13 @@ class PaymentController extends Controller
      */
     public function store(Request $request)
     {
-        $payment = new Payment;
-        $payment->payment_id = $request->payment_id;
-        $payment->payment_method = $request->payment_method;
-        $payment->payment_status = $request->payment_status;
-        $payment->save();
-        return view('admin.payment.create');
+        $manufacturer = new Crud([
+            'title' => $request->get('title'),
+            'post' => $request->get('post')
+        ]);
+
+        $manufacturer->save();
+        return redirect('/manufacturer');
     }
 
     /**
@@ -64,8 +65,9 @@ class PaymentController extends Controller
      */
     public function edit($id)
     {
-        $payment = Payment::find($id);
-        return view('admin.payment.edit')->with('payment', $payment);
+        $manufacturer = Manufacturer::find($id);
+
+        return view('manufacturer.edit', compact('manufacturer','id'));
     }
 
     /**
@@ -77,13 +79,10 @@ class PaymentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $payment = Payment::find($id);
-        $payment->payment_id = $request->payment_id;
-        $payment->payment_method = $request->payment_method;
-        $payment->payment_status = $request->payment_status;
-        $payment->save();
-        Session::flash('message', 'Successfully update Successfully!');
-        return redirect('admin/payment/edit');
+        $manufacturer->title = $request->get('title');
+        $manufacturer->post = $request->get('post');
+        $manufacturer->save();
+        return redirect('/manufacturer');
     }
 
     /**
@@ -94,6 +93,9 @@ class PaymentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $manufacturer =Manufacturer::find($id);
+        $manufacturer->delete();
+
+        return redirect('/manufacturer');
     }
 }
