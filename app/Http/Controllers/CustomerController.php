@@ -27,7 +27,7 @@ class CustomerController extends Controller
      */
     public function create()
     {
-       return view('admin.customer.create');
+        //
     }
 
     /**
@@ -38,16 +38,7 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        $customer = new Customer;
-        $customer->first_name = $request->get('first_name');
-        $customer->last_name = $request->get('last_name');
-        $customer->email_address = $request->get('email_address');
-        $customer->password = $request->get('password');
-        $customer->telephone = $request->get('telephone');
-        
-        
-        $customer->save();
-        return redirect('admin/customer');
+        //
     }
 
     /**
@@ -92,9 +83,6 @@ class CustomerController extends Controller
      */
     public function destroy($id)
     {
-       $customer = Customer::find($id);
-       $customer->delete();
-
-       return redirect('admin/customer');
+        //
     }
 }

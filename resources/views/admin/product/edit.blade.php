@@ -13,7 +13,7 @@
 					</div>
 					@endif
 					<div class="box-header" data-original-title="">
-						<h2><i class="halflings-icon edit"></i><span class="break"></span>Update category</h2>
+						<h2><i class="halflings-icon edit"></i><span class="break"></span>Update Product</h2>
 						<div class="box-icon">
 							<a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a>
 							<a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
@@ -21,17 +21,19 @@
 						</div>
 					</div>
 					<div class="box-content">
-						<form class="form-horizontal" action="{{action('ProductController@update', $id)}}" method="post">
+						<form class="form-horizontal" action="{{route('product.update', ['id' => $product->id])}}" method="post">
                             <fieldset>
-                            	<input name="_token" type="hidden" value="{{ csrf_token() }}"/>
+                            	{{csrf_field()}}
+                            	<input name="_method" type="hidden" value="PATCH">
+                            	
                             <div class="control-group ">
 								<label style="color: black" class="control-label" for="selectError4">Select Category</label>
 								<div class="controls">
 								  <select id="selectError3" name="publication_status" >
 									<option value="" selected hidden>select one</option>
-                                    
-									<option value="{{$Cat->category_id}}" selected="">{{$Cat->category_name}}</option>
-                                   
+                                    @foreach($allCategory as $Cat)
+									<option value="{{$Cat->id}}" {{( $Cat->id == $product->category_id) ? 'selected' : ''   }}  >{{$Cat->category_name}}</option>
+                                  	 @endforeach
 								  </select>
 								</div>
 							  </div>
@@ -41,13 +43,8 @@
 
 									<select id="selectError3" name="manufacturer_id">
 										<option value="" selected hidden>select one</option>
-										@foreach($allManufacturer as )
-										<option value="{{ $manu->id }}"
-
-										@if ($manu->id == old('manufacturer_id', $model->option))
-										selected="selected"
-										@endif
-										>{{ $manu->manufacturer_name }}</option>
+										@foreach($allManufacturer as $manu)
+										<option value="{{ $manu->id }}" {{($manu->id == $product->manufacturer_id) ? 'selected' : ''   }} >{{ $manu->manufacturer_name }}</option>
 										@endforeach
 									</select>
 								  
@@ -84,9 +81,9 @@
 								</div>
                               </div>
                               <div class="control-group ">
-								<label style="color:black" class="control-label" for="prependedInput">product_long_description</label>
+								<label style="color:black" class="control-label" for="prependedInput">product_Price</label>
 								<div class="controls">
-								  <input name="product_price" type="text" id="inputSuccess" value="{{$product->product_long_description}}">
+								  <input name="product_price" type="text" id="inputSuccess" value="{{$product->product_Price}}">
 								  <!-- <span class="help-inline">Woohoo!</span> -->
 								</div>
 							  </div>

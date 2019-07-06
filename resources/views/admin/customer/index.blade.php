@@ -2,7 +2,7 @@
 @extends('admin.layouts.default')
 @section('admincontent')
   
-<a href="http://127.0.0.1:8000/admin/customer/create" class="btn btn-primary btn-lg btn-block">Create New Customer</a>
+
 <div class="box-content">
             <table class="table table-striped table-bordered bootstrap-datatable datatable">
               <thead>
@@ -22,19 +22,15 @@
                 <td class="center">{{$customer['email_address']}}</td>
                 <td class="center">{{$customer['telephone']}}</td>
                 <td class="center">
-                  <form  method="post" action="{{action('CustomerController@destroy', $customer['customer_id'])}}">
-                    
-                    <a class="btn btn-success" href="#">
-                      <i class="halflings-icon white zoom-in"></i>  
-                    </a>
-                    <a class="btn btn-info" href="#">
-                      <i class="halflings-icon white edit"></i>  
-                    </a>
-
-                      {{csrf_field()}}
-                      <input name="_method" type="hidden" value="DELETE">
-                      <button class="btn btn-danger" type="submit"><i class="halflings-icon white trash"></i></button>
-                  </form>
+                  <a class="btn btn-success" href="#">
+                    <i class="halflings-icon white zoom-in"></i>  
+                  </a>
+                  <a class="btn btn-info" href="#">
+                    <i class="halflings-icon white edit"></i>  
+                  </a>
+                  <a class="btn btn-danger" href="#">
+                    <i class="halflings-icon white trash"></i> 
+                  </a>
                 </td>
               </tr>
                @endforeach

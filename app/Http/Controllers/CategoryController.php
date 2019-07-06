@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Category;
+
 class CategoryController extends Controller
 {
     /**
@@ -14,8 +14,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categorys = Category::all()->toArray();
-        return view('admin.category.index', compact('categorys'));
+
+        return view('admin.category.index');
     }
 
     /**
@@ -36,20 +36,7 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-
-        $data = new Category;
-
-
-         $data->category_name = $request->get('category_name');
-         $data->category_description = $request->get('category_description');
-         $data->publication_status = $request->get('publication_status');
-    
-
-        $data->save();
-
-        return redirect('admin/category');
-
-
+        //
     }
 
     /**
@@ -69,12 +56,9 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
-        
-        $category = Category::find($id);
-
-        return view('admin.category.edit', compact('category', 'id'));
+        return view('admin.category.edit');
     }
 
     /**
@@ -86,19 +70,7 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-         $data = Category::find($id);
-
-
-
-         $data->category_name = $request->input('category_name');
-         $data->category_description = $request->input('category_description');
-         $data->publication_status = $request->input('publication_status');
-    
-
-        $data->save();
-
-        return redirect('admin/category');
-
+        //
     }
 
     /**
@@ -109,9 +81,6 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        $category = Category::find($id);
-        $category->delete();
-
-        return redirect('admin/category');
+        //
     }
 }

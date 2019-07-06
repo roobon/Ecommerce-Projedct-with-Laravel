@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Payment;
 use App\Http\Controllers\Controller;
-use App\Shippings;
 
-class ShippingController extends Controller
+class PaymentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,10 +14,8 @@ class ShippingController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $allShipping=Shippings::all();   
-
-        return view('admin.shipping.index')->with('allShipping', $allShipping);
+    {   $payments = Payment::all();
+        return view('admin.payment.index')->with('payments', $payments);
     }
 
     /**
@@ -27,8 +25,8 @@ class ShippingController extends Controller
      */
     public function create()
     {
-        $shipping = Shippings::all();
-        return view('admin.shipping.create')->with('shipping', $shipping);
+     $payments = Payment::all();
+     return view('admin.payment.create')->with('payments', $payments);
     }
 
     /**
@@ -39,16 +37,12 @@ class ShippingController extends Controller
      */
     public function store(Request $request)
     {
-       $shipp = new Shippings;
-
-       $shipp->shipping_first_name = $request->shipping_first_name;//get('title')
-       $shipp->shipping_last_name = $request->shipping_last_name;
-       $shipp->shipping_address = $request->shipping_address;
-       $shipp->shipping_telephone = $request->shipping_telephone;
-       $shipp->shipping_email = $request->shipping_email;
-
-       $shipp->save();
-       return view('admin.shipping.create');
+        $payment = new Payment;
+        $payment->payment_id = $request->payment_id;
+        $payment->payment_method = $request->payment_method;
+        $payment->payment_status = $request->payment_status;
+        $payment->save();
+        return view('admin.payment.create');
     }
 
     /**
@@ -70,7 +64,8 @@ class ShippingController extends Controller
      */
     public function edit($id)
     {
-        //
+        $payment = Payment::find($id);
+        return view('admin.payment.edit')->with('payment', $payment);
     }
 
     /**
@@ -82,7 +77,13 @@ class ShippingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $payment = Payment::find($id);
+        $payment->payment_id = $request->payment_id;
+        $payment->payment_method = $request->payment_method;
+        $payment->payment_status = $request->payment_status;
+        $payment->save();
+        Session::flash('message', 'Successfully update Successfully!');
+        return redirect('admin/payment/edit');
     }
 
     /**

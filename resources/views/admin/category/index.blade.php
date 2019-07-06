@@ -20,36 +20,29 @@
 								  <th>Publication Status</th>
 								  <th>Created at</th>
 								  <th>Updated at</th>
-								  <th colspan="2">Actions</th>
+								  <th>Actions</th>
 							  </tr>
 						  </thead>   
 						  <tbody>
 							<tr>
-@foreach($categorys as $category)
-								<td class="center">{{$category['id']}}</td>
-								<td class="center">{{$category['category_name']}}</td>
-								<td class="center">{{$category['category_description']}}</td>
-								<td class="center">{{$category['publication_status']}}</td>
-								<td class="center">{{$category['created_at']}}</td>
-								<td class="center">{{$category['updated_at']}}</td>
-								 
-
-
+								<td class="center"></td>
+								<td class="center"></td>
+								<td class="center"></td>
+								<td class="center"></td>
+								<td class="center"></td>
 								<td class="center">
-									<form action="{{action('CategoryController@destroy', $category['id'])}}" method="post">
-										{{csrf_field()}}
-										<a class="btn btn-success" href="#">
+									<a class="btn btn-success" href="#">
 										<i class="halflings-icon white zoom-in"></i>  
 									</a>
-									<a class="btn btn-info" href="{{action('CategoryController@edit', $category['id'])}}">
+									<a class="btn btn-info" href="#">
 										<i class="halflings-icon white edit"></i>  
 									</a>
-										<input type="hidden" name="_method" value="DELETE">
-										<button class="btn btn-danger" type="submit"><i class="halflings-icon white trash"></i></button>
-									</form>
+									<a class="btn btn-danger" href="#">
+										<i class="halflings-icon white trash"></i> 
+									</a>
 								</td>
 							</tr>
-		@endforeach
+		
 						  </tbody>
 					  </table>            
 					</div>

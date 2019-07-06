@@ -29,9 +29,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $allCategory=Category::all();
-        $allManufacturer=Manufacturer::all();
-        
+        $allCategory=Category::all(); 
+        $allManufacturer=Manufacturer::all(); 
         return view('admin.product.create',compact('allCategory','allManufacturer'));
     }
 
@@ -51,16 +50,24 @@ class ProductController extends Controller
         $new->product_short_description       = $request->get('product_short_description');
         $new->product_long_description       = $request->get('product_long_description');
         $new->product_price       = $request->get('product_price');
-        $new->product_image       = $request->get('product_image');
+        
+        
+        $dir =  public_path('Productimg/');//set path to http://localhost/ecommerce/public/Productimg/
+        $extension = strtolower($request->file('product_image')->getClientOriginalExtension()); // get image extension
+        $fileName = str_random() . '.' . $extension; // rename image
+        $request->file('product_image')->move($dir, $fileName);//move img
+        $new->product_image = $fileName;//add to object
+        
+        
+
+
+
+        
         $new->product_size       = $request->get('product_size');
         $new->product_color       = $request->get('product_color');
         $new->publication_status       = $request->get('publication_status');
-       
         $new->save();
-
-        // redirect
-        
-     return redirect('admin/product');
+        return Redirect()->route('product.index');
     }
 
     /**
@@ -82,11 +89,11 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        $allCategory=Category::all();
-        $allManufacturer=Manufacturer::all();
-       $product = Product::find($id);
-
-        return view('admin.product.create', compact('product','id'));
+        $allCategory=Category::all(); 
+        $allManufacturer=Manufacturer::all(); 
+        $product=Product::find($id);
+        
+        return view('admin.product.edit', compact('allCategory','allManufacturer','product') );
     }
 
     /**
@@ -98,22 +105,34 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-     
+        // Product::find($id)->update($request->all());
         $new = Product::find($id);
-        $new->category_id       = $request->get('category_id');
-        $new->manufacturer_id       = $request->get('manufacturer_id');
-        $new->product_name       = $request->get('product_name');
-        $new->product_short_description       = $request->get('product_short_description');
-        $new->product_long_description       = $request->get('product_long_description');
-        $new->product_price       = $request->get('product_price');
-        $new->product_image       = $request->get('product_image');
+        $new->category_id       =       $request->get('category_id');
+        $new->manufacturer_id       =       $request->get('manufacturer_id');
+        $new->product_name       =      $request->get('product_name');
+        $new->product_short_description       =         $request->get('product_short_description');
+        $new->product_long_description       =      $request->get('product_long_description');
+        $new->product_price       =         $request->get('product_price');
+        
+        
+        $dir =  public_path('Productimg/');//set path to http://localhost/ecommerce/public/Productimg/
+        if ($new->product_image != '' && File::exists($dir . $new->product_image))File::delete($dir . $new->product_image);
+        $extension = strtolower($request->file('product_image')->getClientOriginalExtension()); // get image extension
+        $fileName = str_random() . '.' . $extension; // rename image
+        $request->file('product_image')->move($dir, $fileName);//move img
+        $new->product_image = $fileName;//add to object
+        
+        
+
+
+
+        
         $new->product_size       = $request->get('product_size');
         $new->product_color       = $request->get('product_color');
         $new->publication_status       = $request->get('publication_status');
-       
         $new->save();
-        
-        return redirect('admin/product');
+
+        return Redirect()->route('product.index')->with('success','Updated');
     }
 
     /**
@@ -122,11 +141,8 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Product $product)
     {
-        $new = Product::find($id);
-        $new->delete();
-
-        return redirect('admin/product');
+        //
     }
 }

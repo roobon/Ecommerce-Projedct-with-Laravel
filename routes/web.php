@@ -24,8 +24,9 @@ Route::resource('admin/customer', 'CustomerController');
 Route::resource('admin/product', 'ProductController');
 Route::resource('admin/manufacturer', 'ProductController');
 Route::resource('admin/order', 'ProductController');
-Route::resource('admin/payment', 'ProductController');
-Route::resource('admin/shipping', 'ShippingController');
+Route::resource('admin/payment', 'PaymentController');
+Route::resource('admin/payment/edit/{edit}', 'PaymentController');
+Route::resource('admin/shipping', 'ProductController');
 Route::resource('admin/user', 'ProductController');
 
 

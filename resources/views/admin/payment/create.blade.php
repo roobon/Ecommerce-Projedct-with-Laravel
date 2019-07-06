@@ -1,42 +1,53 @@
 <!-- create.blade.php -->
 
-@extends('payment.index')
-@session('content')
-    <div class="container">
-        <br>
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
+@extends('admin.layouts.default')
+@section('admincontent')
+    <div class="row-fluid sortable ui-sortable">
+        <div class="box blue span12">
+            <div class="box-header" data-original-title="">
+                <h2><i class="halflings-icon edit"></i><span class="break"></span>Payment_method</h2>
+                <div class="box-icon">
+                    <a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a>
+                    <a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
+                    <a href="#" class="btn-close"><i class="halflings-icon remove"></i></a>
+                </div>
             </div>
-        @endif
+            <div class="box-content">
+        <form class="form-horizontal" method="post" action="{{url('/create')}}">
+            {{csrf_field()}}
+            <div class="control-group ">
+                <label style="color: black" class="control-label" for="selectError4">Payment ID</label>
+                <div class="controls">
+                    <input name="payment_id" type="text" id="inputSuccess">
+                    <!-- <span class="help-inline">Woohoo!</span> -->
+                </div>
+            </div>
+                <div class="control-group ">
+                    <label style="color: black" class="control-label" for="selectError4">Payment Method</label>
+                    <div class="controls">
+                        <input name="payment_method" type="text" id="inputSuccess">
+                        <!-- <span class="help-inline">Woohoo!</span> -->
+                    </div>
+                </div>
 
-        @if (\Session::get('success'))
-            <div class="alert alert-success">
-                <p>{{ \Session::get('success') }}</p>
-            </div>
-        @endif
-        <form method="post" action="{{url('payment.index')}}">
-            <div class="form-group row">
-                {{csrf_field()}}
-                <label for="lgFormGroupInput" class="col-sm-2 col-form-label col-form-label-lg">payment_method</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control form-control-lg" id="lgFormGroupInput" placeholder="title" name="title">
+            <div class="control-group ">
+                <label style="color: black" class="control-label" for="input">Payment Status</label>
+                <div class="controls">
+
+                    <div class="col-sm-10">
+                        <textarea name="payment_status" id="textarea" class="form-control" rows="3" required="required"></textarea>
+                    </div>
+
+
+                    <!-- <span class="help-inline">Woohoo!</span> -->
                 </div>
             </div>
-            <div class="form-group row">
-                <label for="smFormGroupInput" class="col-sm-2 col-form-label col-form-label-sm">payment_status</label>
-                <div class="col-sm-10">
-                    <textarea name="post" rows="8" cols="80"></textarea>
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-md-2"></div>
-                <input type="submit" class="btn btn-primary">
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Save</button>
+                <button class="btn">Cancel</button>
             </div>
         </form>
     </div>
+        </div>
+</div>
 @endsection
