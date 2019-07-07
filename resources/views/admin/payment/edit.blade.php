@@ -7,9 +7,7 @@
             <div class="box-header" data-original-title="">
                 <h2><i class="halflings-icon edit"></i><span class="break"></span>Payment_method</h2>
                 <div class="box-icon">
-                    <a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a>
                     <a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
-                    <a href="#" class="btn-close"><i class="halflings-icon remove"></i></a>
                 </div>
             </div>
             <div class="box-content">
@@ -30,7 +28,6 @@
 
                             <div class="col-sm-10">
                                 <select name="payment_status" id="" value="{{$payment->payment_status}}">
-                                    <option value="" selected hidden>Select One</option>
                                     <option value="1">Active</option>
                                     <option value="0">InActive</option>
                                 </select>

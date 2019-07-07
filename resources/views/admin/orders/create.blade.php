@@ -59,7 +59,7 @@
 							  <div class="control-group ">
 								<label style="color:black" class="control-label" for="prependedInput">Order date</label>
 								<div class="controls">
-								  <input name="order_date" type="text" id="inputSuccess">
+								  <input name="order_date" type="date" id="inputSuccess">
 								  <!-- <span class="help-inline">Woohoo!</span> -->
 								</div>
 							  </div>
@@ -67,14 +67,14 @@
 							  <div class="control-group ">
 								<label style="color:black" class="control-label" for="prependedInput">created_at</label>
 								<div class="controls">
-								  <input name="created_at" type="text" id="inputSuccess">
+								  <input name="created_at" type="date" id="inputSuccess">
 								  <!-- <span class="help-inline">Woohoo!</span> -->
 								</div>
 							  </div>
-							  div class="control-group ">
+							  <div class="control-group ">
 								<label style="color:black" class="control-label" for="prependedInput">updated at</label>
 								<div class="controls">
-								  <input name="updated_at" type="text" id="inputSuccess">
+								  <input name="updated_at" type="date" id="inputSuccess">
 								  <!-- <span class="help-inline">Woohoo!</span> -->
 								</div>
 							  </div>
