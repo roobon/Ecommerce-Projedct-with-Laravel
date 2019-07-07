@@ -10,6 +10,21 @@
                             
                         </div>
                     </div>
+                    @if ($errors->any())
+                    <div class="alert alert-danger">
+                      <ul>
+                        @foreach ($errors->all() as $error)
+                          <li>{{ $error }}</li>
+                         @endforeach
+                      </ul>
+                    </div>
+                    @endif
+
+                    @if (\Session::get('success'))
+                      <div class="alert alert-success">
+                        <p>{{ \Session::get('success') }}</p>
+                        </div>
+                    @endif  
                     <div class="box-content">
                         <form class="form-horizontal" action="{{url('admin/customer')}}" method="post">
 
