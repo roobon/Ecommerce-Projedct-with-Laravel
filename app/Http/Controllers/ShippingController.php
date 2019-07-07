@@ -81,7 +81,8 @@ class ShippingController extends Controller
         $shipp->shipping_telephone = $request->shipping_telephone;
         $shipp->shipping_email = $request->shipping_email;
         $shipp->save();
-        return view('admin.shipping.create');
+        return Redirect()->route('shipping.index');
+        // return view('admin.shipping.create');
     }
     /**
      * Remove the specified resource from storage.
