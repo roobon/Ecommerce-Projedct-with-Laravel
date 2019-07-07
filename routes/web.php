@@ -22,7 +22,7 @@ Route::get('/admin', 'DashboardController@index');
 Route::resource('admin/category', 'CategoryController');
 Route::resource('admin/customer', 'CustomerController');
 Route::resource('admin/product', 'ProductController');
-Route::resource('admin/manufacturer', 'ProductController');
+Route::resource('admin/manufacturer', 'ManufacturerController');
 Route::resource('admin/order', 'OrderController');
 Route::resource('admin/payment', 'PaymentController');
 Route::resource('admin/shipping', 'ShippingController');
