@@ -11,6 +11,6 @@ class Manufacturer extends Model
 	// catagory created many product
   
    public function product() {
-    return $this ->hasMany(Product::class);
+    return $this->hasMany(Product::class);
   }
 }
