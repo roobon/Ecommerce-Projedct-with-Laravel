@@ -37,12 +37,12 @@ class OrderController extends Controller
     public function store(Request $request)
     {
         $order = new Order;
-        $order->customer_name = $request->get('customer_name');
-        $order->shipping_name = $request->get('shipping_name');
-        $order->payment_method = $request->get('payment_method');
+        $order->customer_id = $request->get('customer_id');
+        $order->shipping_id = $request->get('shipping_id');
+        $order->payment_id = $request->get('payment_id');
         $order->order_total = $request->get('order_total');
         $order->order_status = $request->get('order_status');
-        $order->order_date = $request->get('order_date');
+        $order->order_date_time = $request->get('order_date_time');
         $order->created_at = $request->get('created_at');
         $order->updated_at = $request->get('updated_at');
         $order->save();
@@ -83,12 +83,12 @@ class OrderController extends Controller
     public function update(Request $request, $order_id)
     {
         $order = Order::find($order_id);
-        $order->customer_name = $request->get('customer_name');
-        $order->shipping_name = $request->get('shipping_name');
-        $order->payment_method = $request->get('payment_method');
+        $order->customer_id = $request->get('customer_id');
+        $order->shipping_id = $request->get('shipping_id');
+        $order->payment_id = $request->get('payment_id');
         $order->order_total = $request->get('order_total');
         $order->order_status = $request->get('order_status');
-        $order->order_date = $request->get('order_date');
+        $order->order_date_time = $request->get('order_date_time');
         $order->created_at = $request->get('created_at');
         $order->updated_at = $request->get('updated_at');
 

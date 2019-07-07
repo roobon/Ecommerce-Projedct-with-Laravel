@@ -37,12 +37,15 @@ class PaymentController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'payment_method' => 'required|max:20',
+            'payment_status' => 'required',
+        ]);
         $payment = new Payment;
-        $payment->payment_id = $request->payment_id;
         $payment->payment_method = $request->payment_method;
         $payment->payment_status = $request->payment_status;
         $payment->save();
-        return redirect('admin/payment');
+        return redirect('admin/payment')->with('success', 'you have just create one item');
     }
 
     /**

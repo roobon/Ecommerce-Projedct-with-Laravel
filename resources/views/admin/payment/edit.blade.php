@@ -28,8 +28,16 @@
 
                             <div class="col-sm-10">
                                 <select name="payment_status" id="" value="{{$payment->payment_status}}">
-                                    <option value="1">Active</option>
-                                    <option value="0">InActive</option>
+                                    <option value="1"
+                                    @if($payment->payment_status==1)
+                                        selected
+                                     @endif
+                                        >Active</option>
+                                    <option value="0"
+                                    @if($payment->payment_status==0)
+                                        selected
+                                    @endif
+                                    >InActive</option>
                                 </select>
                             </div>
                             <!-- <span class="help-inline">Woohoo!</span> -->

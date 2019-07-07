@@ -37,12 +37,23 @@ class ManufacturerController extends Controller
      */
     public function store(Request $request)
     {
+         $this->validate($request, [
+        'manufacturer_name' => 'required|max:6',
+        'description' => 'required',
+        'status' => 'required',
+
+        ]);
+
         $manufacturer = new Manufacturer();
         $manufacturer->manufacturer_name = $request->get('manufacturer_name');
         $manufacturer->description = $request->get('description');
         $manufacturer->status = $request->get('status');
+        $manufacturer->created_at = $request->get('created_at');
+        $manufacturer->updated_at = $request->get('updated_at');
+
+//print_r($manufacturer);
         $manufacturer->save();
-        return redirect('admin/manufacturer');
+        return redirect('admin.manufacturer.index');
     }
 
     /**
