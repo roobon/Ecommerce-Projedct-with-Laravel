@@ -1,6 +1,15 @@
 @extends('admin.layouts.default')
 @section('admincontent')
 <div class="row-fluid sortable ui-sortable">
+	@if ($errors->any())
+          <div class="alert alert-danger">
+              <ul>
+                  @foreach ($errors->all() as $error)
+                      <li>{{ $error }}</li>
+                  @endforeach
+              </ul>
+          </div>
+        @endif
 				<div class="box blue span12">
 					<div class="box-header" data-original-title="">
 						<h2><i class="halflings-icon edit"></i><span class="break"></span>create shiping</h2>
@@ -29,7 +38,7 @@
 								<label style="color: black" class="control-label" for="input">Shipping Address</label>
 								<div class="controls">
                                     <div class="col-sm-10">
-                                        <textarea name="shipping_address" id="textarea" class="form-control" rows="3" required="required"></textarea>
+                                        <textarea name="shipping_address" id="textarea" class="form-control" rows="3"></textarea>
                                     </div>
 								</div>
 							  </div>
