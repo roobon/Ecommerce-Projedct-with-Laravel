@@ -71,9 +71,16 @@ class ShippingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $shipping_id)
     {
-        //
+        $shipp = Shippings::find($shipping_id);
+        $shipp->shipping_first_name = $request->shipping_first_name;//get('title')
+        $shipp->shipping_last_name = $request->shipping_last_name;
+        $shipp->shipping_address = $request->shipping_address;
+        $shipp->shipping_telephone = $request->shipping_telephone;
+        $shipp->shipping_email = $request->shipping_email;
+        $shipp->save();
+        return view('admin.shipping.create');
     }
     /**
      * Remove the specified resource from storage.
@@ -81,8 +88,11 @@ class ShippingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($shipping_id)
     {
-        //
+        $allShipping = Shippings::find($shipping_id);
+        $allShipping->delete();
+
+        return view('admin.shipping');
     }
 }
