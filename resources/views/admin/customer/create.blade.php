@@ -33,31 +33,31 @@
                                  {{csrf_field()}}
                                 <label class="control-label" for="focusedInput">First Name</label>
                                 <div class="controls">
-                                  <input class="input-xlarge focused" id="f_name" name="first_name" type="text">
+                                  <input class="input-xlarge focused" id="first_name" name="first_name" value="{{old('first_name')}}" type="text">
                                 </div>
                               </div>
                               <div class="control-group">
                                 <label class="control-label" for="focusedInput">Last Name</label>
                                 <div class="controls">
-                                  <input class="input-xlarge focused" id="l_name" name="last_name" type="text">
+                                  <input class="input-xlarge focused" id="last_name" value="{{old('last_name')}}" name="last_name" type="text">
                                 </div>
                               </div>
                               <div class="control-group">
                                 <label class="control-label" for="focusedInput">Email</label>
                                 <div class="controls">
-                                  <input class="input-xlarge focused" id="e_mail" name="email_address" type="email">
+                                  <input class="input-xlarge focused" id="email_address" value="{{old('email_address')}}" name="email_address" type="email">
                                 </div>
                               </div>
                               <div class="control-group">
                                 <label class="control-label" for="focusedInput">Password</label>
                                 <div class="controls">
-                                  <input class="input-xlarge focused" id="pass" name="password" type="password">
+                                  <input class="input-xlarge focused" id="password" value="{{old('password')}}" name="password" type="password">
                                 </div>
                               </div>
                               <div class="control-group">
                                 <label class="control-label" for="focusedInput">Telephone</label>
                                 <div class="controls">
-                                  <input class="input-xlarge focused" id="mobile" name="telephone" type="text">
+                                  <input class="input-xlarge focused" id="telephone" value="{{old('telephone')}}" name="telephone" type="text">
                                 </div>
                               </div>
 
