@@ -36,14 +36,22 @@ class CategoryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {   
+        $this->validate($request, [
+            'category_name' => 'required',
+            'category_description' => 'required|max:30',
+            'publication_status' => 'required',
+
+        ]);
+
         $data = new Category;
         $data->category_name = $request->get('category_name');
         $data->category_description = $request->get('category_description');
         $data->publication_status = $request->get('publication_status');
         $data->save();
 
-        return redirect('admin/category');
+        //return redirect('admin/category');
+        return back()->with('success', 'You have created catagory successfully');
     }
 
     /**
