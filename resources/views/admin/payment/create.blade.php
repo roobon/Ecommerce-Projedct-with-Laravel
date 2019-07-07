@@ -41,7 +41,7 @@
             </div>
             <div class="form-actions">
                 <button type="submit" class="btn btn-primary">Save</button>
-                <button class="btn">Cancel</button>
+                <a href="{{url('admin/payment')}}" class="btn btn-info">Cancel</a>
             </div>
         </form>
     </div>
