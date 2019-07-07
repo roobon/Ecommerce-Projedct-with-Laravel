@@ -40,7 +40,8 @@ class ShippingController extends Controller
        $shipp->shipping_telephone = $request->shipping_telephone;
        $shipp->shipping_email = $request->shipping_email;
        $shipp->save();
-       return view('admin.shipping.create');
+       return Redirect()->route('shipping.index');
+       // return view('admin.shipping.create');
     }
     /**
      * Display the specified resource.
@@ -80,7 +81,8 @@ class ShippingController extends Controller
         $shipp->shipping_telephone = $request->shipping_telephone;
         $shipp->shipping_email = $request->shipping_email;
         $shipp->save();
-        return view('admin.shipping.create');
+        return Redirect()->route('shipping.index');
+        // return view('admin.shipping.create');
     }
     /**
      * Remove the specified resource from storage.
@@ -90,9 +92,10 @@ class ShippingController extends Controller
      */
     public function destroy($shipping_id)
     {
-        $allShipping = Shippings::find($shipping_id);
-        $allShipping->delete();
+        $shipping = Shippings::find($shipping_id);
+        $shipping->delete();
 
-        return view('admin.shipping');
+        return Redirect()->route('shipping.index');
+        // return view('admin.shipping.create');
     }
 }

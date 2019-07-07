@@ -26,15 +26,20 @@
                 <td class="center">{{$shipping->shipping_email}}</td>
                 <td class="center">{{$shipping->created_at}}</td>
                 <td class="center">
-                  <a class="btn btn-success" href="#">
-                    <i class="halflings-icon white zoom-in"></i>  
-                  </a>
-                  <a class="btn btn-info" href="{{action('ShippingController@edit', $shipping['shipping_id'])}}">
-                    <i class="halflings-icon white edit"></i>  
-                  </a>
-                  <a class="btn btn-danger" href="{{url('shipping.destroy')}}">
+                  {{-- <a class="btn btn-danger" href="{{url('shipping.destroy')}}">
                     <i class="halflings-icon white trash"></i> 
-                  </a>
+                  </a> --}}
+                    <form action="{{action('ShippingController@destroy', $shipping['shipping_id'])}}" method="post">
+                      <a class="btn btn-success" href="#">
+                        <i class="halflings-icon white zoom-in"></i>  
+                      </a>
+                      <a class="btn btn-info" href="{{action('ShippingController@edit', $shipping['shipping_id'])}}">
+                        <i class="halflings-icon white edit"></i>  
+                      </a>
+                      {{csrf_field()}}
+                      <input name="_method" type="hidden" value="DELETE">
+                      <button class="btn btn-danger" type="submit"><i class="halflings-icon white trash"></i></button>
+                    </form>
                 </td>
               </tr>
               @endforeach

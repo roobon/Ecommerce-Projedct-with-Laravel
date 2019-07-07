@@ -34,9 +34,9 @@
                   </a>
                   <a href="{{route('product.edit',$product->id)}}" class="btn btn-warning"><i class="halflings-icon white edit"></i> </a>
                   
-                  <form action="{{route('product.destroy',$product->id)}}" method="post">
+                  <form style="display: inline-block;" action="{{route('product.destroy',$product->id)}}" method="post">
                   {{csrf_field()}}
-                <input name="_method" type="hidden" value="DELETE">
+                  <input name="_method" type="hidden" value="DELETE">
                  <button class="btn btn-danger" type="submit">Delete</button>
                 </form>
                  

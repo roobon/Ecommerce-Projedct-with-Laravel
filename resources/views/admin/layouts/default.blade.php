@@ -37,7 +37,7 @@
 	<link rel="shortcut icon" href="{{asset('backend/img/favicon.ico')}}">
 	<!-- end: Favicon -->
 	
-		
+		@yield('style')	
 		
 		
 </head>
@@ -158,6 +158,7 @@
 
 		<script src="{{asset('backend/js/custom.js')}}"></script>
 	<!-- end: JavaScript-->
+		@yield('js')	
 	
 </body>
 </html>
