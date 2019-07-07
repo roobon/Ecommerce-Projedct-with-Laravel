@@ -9,7 +9,7 @@
 						</div>
 					</div>
 					<div class="box-content">
-						<form class="form-horizontal" action="{{ route('manufacturer.store') }}" method="post">
+						<form class="form-horizontal" action="{{action('ManufacturerController@store')}}" method="post">
 							{{csrf_field()}}
 							<fieldset>
 							  <div class="control-group ">
@@ -43,6 +43,22 @@
 									<option value="0">draft</option>
 									
 								  </select>
+								</div>
+							  </div>
+
+							  <div class="control-group ">
+								<label style="color:black" class="control-label" for="prependedInput">created at</label>
+								<div class="controls">
+								  <input name="created_at" type="date" id="inputSuccess">
+								  <!-- <span class="help-inline">Woohoo!</span> -->
+								</div>
+							  </div>
+
+							  <div class="control-group ">
+								<label style="color:black" class="control-label" for="prependedInput">updated at</label>
+								<div class="controls">
+								  <input name="updated_at" type="date" id="inputSuccess">
+								  <!-- <span class="help-inline">Woohoo!</span> -->
 								</div>
 							  </div>
 
