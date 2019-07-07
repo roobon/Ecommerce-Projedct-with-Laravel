@@ -14,9 +14,9 @@ class ManufacturerController extends Controller
      */
     public function index()
     {
-         $manufacturer = Manufacturer::all()->toArray();
+         $manufacturer = Manufacturer::all();
 
-        return view('manufacturer.index', compact('manufacturer'));
+        return view('admin.manufacturer.index', compact('manufacturer'));
     }
 
     /**
@@ -26,7 +26,7 @@ class ManufacturerController extends Controller
      */
     public function create()
     {
-         // return view('manufacturer.create');
+         return view('admin.manufacturer.create');
     }
 
     /**
@@ -37,13 +37,12 @@ class ManufacturerController extends Controller
      */
     public function store(Request $request)
     {
-        $manufacturer = new Crud([
-            'title' => $request->get('title'),
-            'post' => $request->get('post')
-        ]);
-
+        $manufacturer = new Manufacturer();
+        $manufacturer->manufacturer_name = $request->get('manufacturer_name');
+        $manufacturer->description = $request->get('description');
+        $manufacturer->status = $request->get('status');
         $manufacturer->save();
-        return redirect('/manufacturer');
+        return redirect('admin/manufacturer');
     }
 
     /**
@@ -67,7 +66,7 @@ class ManufacturerController extends Controller
     {
         $manufacturer = Manufacturer::find($id);
 
-        return view('manufacturer.edit', compact('manufacturer','id'));
+        return view('admin.manufacturer.edit', compact('manufacturer'));
     }
 
     /**
@@ -79,10 +78,13 @@ class ManufacturerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $manufacturer->title = $request->get('title');
-        $manufacturer->post = $request->get('post');
+           $manufacturer = Manufacturer::find($id);
+        $manufacturer->manufacturer_name = $request->get('manufacturer_name');
+        $manufacturer->description = $request->get('description');
+        $manufacturer->status = $request->get('status');
         $manufacturer->save();
-        return redirect('/manufacturer');
+       
+        return redirect('admin/manufacturer/');
     }
 
     /**
@@ -96,6 +98,6 @@ class ManufacturerController extends Controller
         $manufacturer =Manufacturer::find($id);
         $manufacturer->delete();
 
-        return redirect('/manufacturer');
+        return redirect('admin/manufacturer');
     }
 }
