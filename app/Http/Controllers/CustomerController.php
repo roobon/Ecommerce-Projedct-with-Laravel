@@ -38,6 +38,15 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
+
+        $this->validate($request, [
+            'first_name' => 'required|max:100',
+            'last_name' => 'required|max:100',
+            'email_address' => 'required|max:100',
+            'password' => 'required|max:100',
+            'telephone' => 'required|max:100',
+        ]);
+
         $customer = new Customer;
         $customer->first_name = $request->get('first_name');
         $customer->last_name = $request->get('last_name');
@@ -46,7 +55,8 @@ class CustomerController extends Controller
         $customer->telephone = $request->get('telephone');
         
         $customer->save();
-        return redirect('admin/customer');
+        //return redirect('admin/customer');
+        return back()->with('success', 'You have just created one item');
     }
 
     /**
