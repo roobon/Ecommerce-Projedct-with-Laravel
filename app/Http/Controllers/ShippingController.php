@@ -33,6 +33,15 @@ class ShippingController extends Controller
      */
     public function store(Request $request)
     {
+
+       $this->validate($request, [
+        'shipping_first_name' => 'required|max:6',
+        'shipping_last_name' => 'required',
+        'shipping_address' => 'required',
+        'shipping_telephone' => 'required',
+        'shipping_email' => 'required',
+        ]);
+
        $shipp = new Shippings;
        $shipp->shipping_first_name = $request->shipping_first_name;//get('title')
        $shipp->shipping_last_name = $request->shipping_last_name;
@@ -40,7 +49,8 @@ class ShippingController extends Controller
        $shipp->shipping_telephone = $request->shipping_telephone;
        $shipp->shipping_email = $request->shipping_email;
        $shipp->save();
-       return Redirect()->route('shipping.index');
+       // return Redirect()->route('shipping.index');
+       return Redirect()->route('shipping.index')->with('success', 'You have just created one item');
        // return view('admin.shipping.create');
     }
     /**
