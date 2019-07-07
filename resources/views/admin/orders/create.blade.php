@@ -15,27 +15,27 @@
 							{{csrf_field()}}
 							<fieldset>
 							  <div class="control-group ">
-								<label style="color:black" class="control-label" for="prependedInput">Customer Name</label>
+								<label style="color:black" class="control-label" for="prependedInput">Customer Id</label>
 								<div class="controls">
-								  <input name="customer_name" type="text" id="inputSuccess">
+								  <input name="customer_id" type="text" id="inputSuccess">
 								  <!-- <span class="help-inline">Woohoo!</span> -->
 								</div>
 							  </div>
                               
                       
 							  <div class="control-group ">
-								<label style="color:black" class="control-label" for="prependedInput">shipping_name</label>
+								<label style="color:black" class="control-label" for="prependedInput">shipping Id</label>
 								<div class="controls">
-								  <input name="shipping_name" type="text" id="inputSuccess">
+								  <input name="shipping_id" type="text" id="inputSuccess">
 								  <!-- <span class="help-inline">Woohoo!</span> -->
 								</div>
 							  </div>
 
 
 							  <div class="control-group ">
-								<label style="color:black" class="control-label" for="prependedInput">Payment Method</label>
+								<label style="color:black" class="control-label" for="prependedInput">Payment Id</label>
 								<div class="controls">
-								  <input name="payment_method" type="text" id="inputSuccess">
+								  <input name="payment_id" type="text" id="inputSuccess">
 								  <!-- <span class="help-inline">Woohoo!</span> -->
 								</div>
 							  </div>
@@ -59,7 +59,7 @@
 							  <div class="control-group ">
 								<label style="color:black" class="control-label" for="prependedInput">Order date</label>
 								<div class="controls">
-								  <input name="order_date" type="date" id="inputSuccess">
+								  <input name="order_date_time" type="date" id="inputSuccess">
 								  <!-- <span class="help-inline">Woohoo!</span> -->
 								</div>
 							  </div>

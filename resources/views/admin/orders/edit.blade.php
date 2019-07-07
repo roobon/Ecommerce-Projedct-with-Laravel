@@ -16,27 +16,27 @@
 							<fieldset>
 							<input type="hidden" name="_method" value="PATCH">
 							  <div class="control-group ">
-								<label style="color:black" class="control-label" for="prependedInput">customer name</label>
+								<label style="color:black" class="control-label" for="prependedInput">Customer id</label>
 								<div class="controls">
-								  <input name="customer_name" type="text" id="inputSuccess" value="{{$order['customer_name']}}">
+								  <input name="customer_id" type="text" id="inputSuccess" value="{{$order['customer_id']}}">
 								  <!-- <span class="help-inline">Woohoo!</span> -->
 								</div>
 							  </div>
 
 
 							  <div class="control-group ">
-								<label style="color:black" class="control-label" for="prependedInput">Shipping Name</label>
+								<label style="color:black" class="control-label" for="prependedInput">shipping id</label>
 								<div class="controls">
-								  <input name="shipping_name" type="text" id="inputSuccess" value="{{$order['shipping_name']}}">
+								  <input name="shipping_id" type="text" id="inputSuccess" value="{{$order['shipping_id']}}">
 								</div>
 							  </div>
 
 
 
 							  <div class="control-group ">
-								<label style="color:black" class="control-label" for="prependedInput">Payment Method</label>
+								<label style="color:black" class="control-label" for="prependedInput">payment id</label>
 								<div class="controls">
-								  <input name="payment_method" type="text" id="inputSuccess" value="{{$order['payment_method']}}">
+								  <input name="payment_id" type="text" id="inputSuccess" value="{{$order['payment_id']}}">
 								</div>
 							  </div>
 
@@ -61,7 +61,7 @@
 							  <div class="control-group ">
 								<label style="color:black" class="control-label" for="prependedInput">Order Date&Time</label>
 								<div class="controls">
-								  <input name="order_date" type="text" id="inputSuccess" value="{{$order['order_date']}}">
+								  <input name="order_date_time" type="text" id="inputSuccess" value="{{$order['order_date_time']}}">
 								</div>
 							  </div>
 
