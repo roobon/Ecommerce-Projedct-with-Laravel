@@ -1,6 +1,10 @@
 @extends('admin.layouts.default')
 @section('admincontent')
-  
+       @if (\Session::get('success'))
+            <div class="alert alert-success">
+                <p>{{ \Session::get('success') }}</p>
+            </div>
+        @endif 
 
       <div class="box-content">
             <table class="table table-striped table-bordered bootstrap-datatable datatable">
