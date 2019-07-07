@@ -22,17 +22,19 @@
             <td>{{$payment->payment_date_time}}</td>
             <td>{{$payment->created_at}}</td>
             <td>{{$payment->updated_at}}</td>
-                <td>
-                    <a href="{{URL::to('admin/payment/show')}}" class="btn btn-success">
+            <td>
+                <form method="post" action="{{action('PaymentController@destroy', $payment->payment_id)}}">
+                    <a href="#" class="btn btn-success">
                         <i class="halflings-icon white zoom-in"></i>
                     </a>
                     <a href="{{action('PaymentController@edit', $payment->payment_id)}}" class="btn btn-info">
                         <i class="halflings-icon white edit"></i>
                     </a>
-                    <a href="{{action('PaymentController@destroy', $payment->payment_id)}}" class="btn btn-danger">
-                        <i class="halflings-icon white trash"></i>
-                    </a>
-                </td>
+                    {{csrf_field()}}
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button type="submit" class="btn btn-danger"><i class="halflings-icon white trash"></i></button>
+                </form>
+            </td>
         </tr>
         @endforeach
         </tbody>

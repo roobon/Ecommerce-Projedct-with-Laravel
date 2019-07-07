@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Manufacturer;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -26,7 +26,7 @@ class ManufacturerController extends Controller
      */
     public function create()
     {
-         return view('manufacturer.create');
+         // return view('manufacturer.create');
     }
 
     /**
