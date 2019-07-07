@@ -3,6 +3,20 @@
 @extends('admin.layouts.default')
 @section('admincontent')
     <div class="row-fluid sortable ui-sortable">
+        @if($errors->any())
+            <div class="atert alert-danger">
+                <ul>
+                   @foreach($errors->all() as $error)
+                       <li>{{$error}}</li>
+                   @endforeach
+                </ul>
+            </div>
+        @endif
+        @if(\Session::get('success'))
+            <div class="atert atert-success">
+                <p>{{\Session::get('success')}}</p>
+            </div>
+        @endif
         <div class="box blue span12">
             <div class="box-header" data-original-title="">
                 <h2><i class="halflings-icon edit"></i><span class="break"></span>Payment_method</h2>
