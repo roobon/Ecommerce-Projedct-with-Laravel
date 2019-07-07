@@ -1,17 +1,39 @@
 @extends('admin.layouts.default')
+@section('style')
+<style>
+	.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.btn {
+  border: 2px solid gray;
+  color: gray;
+  background-color: white;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+</style>
+@stop
 @section('admincontent')
 <div class="row-fluid sortable ui-sortable">
 				<div class="box blue span24">
 					<div class="box-header" data-original-title="">
-						<h2><i class="halflings-icon edit"></i><span class="break"></span>Add Product</h2>
-						<div class="box-icon">
-							<a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a>
-							<a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
-							<a href="#" class="btn-close"><i class="halflings-icon remove"></i></a>
-						</div>
+						<h2><i class="halflings-icon edit"></i><span class="break"></span>Add product</h2>						
 					</div>
 					<div class="box-content">
-						<form class="form-horizontal" method="post" action="{{ route('product.store') }}" enctype="multipart/form-data">
+						<form class="form-horizontal" method="post" action="{{ route('product.store') }}" enctype="multipart/form-data" id="form1">
 							 {{csrf_field()}}
                             <fieldset>
                             <div class="control-group ">
@@ -73,13 +95,21 @@
 								  <!-- <span class="help-inline">Woohoo!</span> -->
 								</div>
 							  </div>
+
+
                               
                               <div class="control-group ">
 								<label style="color:black" class="control-label" for="prependedInput">product_image</label>
+
+
 								
 								<div class="controls">
-									<input name="product_image" id="" type="file" >								  
-								  <!-- <span class="help-inline">Woohoo!</span> -->
+									<div class="upload-btn-wrapper">
+										<button class="btn">Upload a file</button>										
+										<input name="product_image" id="inputFile" type="file" >								  
+									</div>
+									
+								  	<img id="image_upload_preview" src="http://placehold.it/100x100" alt="Product image" style="max-height:100px" />
 								</div>
 							  </div>
                               <div class="control-group ">
@@ -123,4 +153,24 @@
 			</div>
 
 
+@stop
+@section('js')
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script> 
+  function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#image_upload_preview').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $("#inputFile").change(function () {
+        readURL(this);
+    });
+</script>
 @stop
