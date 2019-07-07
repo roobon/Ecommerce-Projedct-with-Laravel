@@ -37,6 +37,13 @@ class ManufacturerController extends Controller
      */
     public function store(Request $request)
     {
+         $this->validate($request, [
+        'manufacturer_name' => 'required|max:6',
+        'description' => 'required',
+        'status' => 'required',
+        
+        ]);
+
         $manufacturer = new Manufacturer();
         $manufacturer->manufacturer_name = $request->get('manufacturer_name');
         $manufacturer->description = $request->get('description');
