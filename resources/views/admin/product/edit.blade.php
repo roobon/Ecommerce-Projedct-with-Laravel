@@ -1,4 +1,31 @@
 @extends('admin.layouts.default')
+@section('style')
+<style>
+	.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.btn {
+  border: 2px solid gray;
+  color: gray;
+  background-color: white;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+</style>
+@stop
 @section('admincontent')
 
 <div class="row-fluid sortable ui-sortable">
@@ -14,11 +41,7 @@
 					@endif
 					<div class="box-header" data-original-title="">
 						<h2><i class="halflings-icon edit"></i><span class="break"></span>Update Product</h2>
-						<div class="box-icon">
-							<a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a>
-							<a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
-							<a href="#" class="btn-close"><i class="halflings-icon remove"></i></a>
-						</div>
+						
 					</div>
 					<div class="box-content">
 						<form class="form-horizontal" action="{{route('product.update', ['id' => $product->id])}}" method="post" enctype="multipart/form-data">
@@ -92,9 +115,14 @@
                               	<label style="color:black" class="control-label" for="prependedInput">product_image</label>
 								
 								<div class="controls">
-									<input name="product_image" id="" type="file" >								  
+									<div class="upload-btn-wrapper">
+										<button class="btn">Upload a file</button>										
+										<input name="product_image" id="inputFile" type="file" >								  
+									</div>
+									<img src="{{url($product->product_image? 'Productimg/'.$product->product_image:'images/noimage.jpg')}}" id="image_upload_preview" alt="Product Image" class="img-responsive" style="max-height: 100px">
 								  <!-- <span class="help-inline">Woohoo!</span> -->
 								</div>
+
 								
 							  </div>
                               <div class="control-group ">
@@ -118,8 +146,8 @@
 								<div class="controls">
 								  <select id="selectError3" name="publication_status" >
 									<option value="" selected hidden>select one</option>
-									<option value="1">published</option>
-									<option value="0">draft</option>
+									<option value="1" {{($product->publication_status==1) ? 'selected' : ''   }}>published</option>
+									<option value="0" {{($product->publication_status==0) ? 'selected' : ''   }}>draft</option>
 									
 								  </select>
 								</div>
@@ -138,4 +166,24 @@
 			</div>
 
 
+@stop
+@section('js')
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script> 
+  function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#image_upload_preview').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $("#inputFile").change(function () {
+        readURL(this);
+    });
+</script>
 @stop

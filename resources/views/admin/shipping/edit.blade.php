@@ -5,9 +5,7 @@
 					<div class="box-header" data-original-title="">
 						<h2><i class="halflings-icon edit"></i><span class="break"></span>create shiping</h2>
 						<div class="box-icon">
-							<a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a>
 							<a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
-							<a href="#" class="btn-close"><i class="halflings-icon remove"></i></a>
 						</div>
 					</div>
 					<div class="box-content">
@@ -32,7 +30,8 @@
 								<label style="color: black" class="control-label" for="input">Shipping Address</label>
 								<div class="controls">
                                     <div class="col-sm-10">
-                                        <textarea name="shipping_address" id="textarea" class="form-control" rows="3" required="required" value="{{$shipping->shipping_address}}"></textarea>
+                                    	<input name="shipping_address" type="text" id="inputSuccess" value="{{$shipping->shipping_address}}">
+                                        {{-- <textarea name="shipping_address" id="textarea" class="form-control" rows="3" required="required" value="{{$shipping->shipping_address}}"></textarea> --}}
                                     </div>
 								</div>
 							  </div>
@@ -54,7 +53,7 @@
 
 							  <div class="form-actions">
 								<button type="submit" class="btn btn-primary">Update</button>
-								<button class="btn">Cancel</button>
+								<a href="{{url('admin/shipping')}}" class="btn">Cancel</a>
 							  </div>
 						  </form>
 					
