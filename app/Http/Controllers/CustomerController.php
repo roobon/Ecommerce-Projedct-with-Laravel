@@ -42,9 +42,9 @@ class CustomerController extends Controller
         $this->validate($request, [
             'first_name' => 'required|max:100',
             'last_name' => 'required|max:100',
-            'email_address' => 'required|max:100',
-            'password' => 'required|max:100',
-            'telephone' => 'required|max:100',
+            'email_address' => 'required|email|unique:customer',
+            'password' => 'required|min:8',
+            'telephone' => 'required|min:11|numeric',
         ]);
 
         $customer = new Customer;
@@ -56,7 +56,7 @@ class CustomerController extends Controller
         
         $customer->save();
         //return redirect('admin/customer');
-        return back()->with('success', 'You have just created one item');
+        return back()->with('success', 'You have just created one Customer');
     }
 
     /**
