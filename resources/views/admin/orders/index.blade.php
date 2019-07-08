@@ -7,9 +7,9 @@
               <thead>
                 <tr>
                   <th>Order ID</th>
-                  <th> Customer Name</th>
-                  <th>Shipping Name</th>
-                  <th>Payment Method</th>
+                  <th> Customer id</th>
+                  <th>shipping id</th>
+                  <th>payment id</th>
                   <th>Order Total</th>
                   <th>Order Status</th>
                   <th>Order Date&Time</th>
@@ -22,12 +22,12 @@
                 @foreach($orders as $order)
                 <tr>
                 <td class="center">{{$order['order_id']}}</td>
-                <td class="center">{{$order['customer_name']}}</td>
-                <td class="center">{{$order['shipping_name']}}</td>
-                <td class="center">{{$order['payment_method']}}</td>
+                <td class="center">{{$order['customer_id']}}</td>
+                <td class="center">{{$order['shipping_id']}}</td>
+                <td class="center">{{$order['payment_id']}}</td>
                 <td class="center">{{$order['order_total']}}</td>
                 <td class="center">{{$order['order_status']}}</td>
-                <td class="center">{{$order['order_date']}}</td>
+                <td class="center">{{$order['order_date_time']}}</td>
                 <td class="center">{{$order['created_at']}}</td>
                 <td class="center">{{$order['updated_at']}}</td> 
                 
