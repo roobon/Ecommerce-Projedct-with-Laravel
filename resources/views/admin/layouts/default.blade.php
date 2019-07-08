@@ -74,7 +74,9 @@
 				<li><a href="#">Dashboard</a></li>
 			</ul>
 
+
 						
+		@include('admin.layouts.flash-message')	
 		@yield('admincontent')	
 
 		</div><!--/.fluid-container-->
