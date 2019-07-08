@@ -33,9 +33,17 @@
 
 
 							  <div class="control-group ">
-								<label style="color:black" class="control-label" for="prependedInput">Payment Id</label>
+								<label style="color:black" class="control-label" for="prependedInput">Payment Method</label>
 								<div class="controls">
-								  <input name="payment_id" type="text" id="inputSuccess">
+								  <select name="payid" id="">
+								  	<option value="">Select one</option>
+								  		@foreach($payments as $payment)
+									<option value="{{$payment['payment_id']}}">{{$payment['payment_method']}}</option>
+								  		@endforeach
+								  	
+
+								  </select>
+
 								  <!-- <span class="help-inline">Woohoo!</span> -->
 								</div>
 							  </div>

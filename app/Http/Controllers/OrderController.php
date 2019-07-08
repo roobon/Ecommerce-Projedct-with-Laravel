@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Order;
+use App\Payment;
+
 class OrderController extends Controller
 {
     /**
@@ -25,7 +27,8 @@ class OrderController extends Controller
      */
     public function create()
     {
-         return view('admin.orders.create');
+         $pays = Payment::all()->toArray();
+         return view('admin.orders.create')->with('payments', $pays);
     }
 
     /**
