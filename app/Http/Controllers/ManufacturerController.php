@@ -53,7 +53,7 @@ class ManufacturerController extends Controller
 
 //print_r($manufacturer);
         $manufacturer->save();
-        return redirect('admin.manufacturer.index');
+        return redirect('admin/manufacturer');
     }
 
     /**
