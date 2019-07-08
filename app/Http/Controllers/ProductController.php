@@ -68,7 +68,7 @@ class ProductController extends Controller
         $new->product_color       = $request->get('product_color');
         $new->publication_status       = $request->get('publication_status');
         $new->save();
-        return Redirect()->route('product.index');
+        return Redirect()->route('product.index')->with('success','Product Added successfully!');
     }
 
     /**
@@ -94,7 +94,7 @@ class ProductController extends Controller
         $allManufacturer=Manufacturer::all(); 
         $product=Product::find($id);
         
-        return view('admin.product.edit', compact('allCategory','allManufacturer','product') );
+        return view('admin.product.edit', compact('allCategory','allManufacturer','product'));
     }
 
     /**
@@ -133,7 +133,7 @@ class ProductController extends Controller
         $new->publication_status       = $request->get('publication_status');
         $new->save();
 
-        return Redirect()->route('product.index')->with('success','Updated');
+        return Redirect()->route('product.index')->with('info','Product Updated successfully!');
     }
 
     /**
@@ -146,6 +146,6 @@ class ProductController extends Controller
     {
        $new = Product::find($id);
         $new->delete();
-       return Redirect()->route('product.index');
+       return Redirect()->route('product.index')->with('warning','Product Deleted successfully!');
     }
 }

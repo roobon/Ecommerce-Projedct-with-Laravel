@@ -34,7 +34,7 @@
                   </a>
                   <a href="{{route('product.edit',$product->id)}}" class="btn btn-warning"><i class="halflings-icon white edit"></i> </a>
                   
-                  <form style="display: inline-block;" action="{{route('product.destroy',$product->id)}}" method="post">
+                  <form style="display: inline-block;" action="{{route('product.destroy',$product->id)}}" method="post" class="delete">
                   {{csrf_field()}}
                   <input name="_method" type="hidden" value="DELETE">
                  <button class="btn btn-danger" type="submit">Delete</button>
@@ -49,4 +49,11 @@
               </tbody>
             </table>            
           </div>
+@stop
+@section('js')
+<script>
+    $(".delete").on("submit", function(){
+        return confirm("Are you sure?");
+    });
+</script>
 @stop
