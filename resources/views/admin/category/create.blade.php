@@ -12,9 +12,7 @@
         @endif
 
         @if (\Session::get('success'))
-            <div class="alert alert-success">
-                <p>{{ \Session::get('success') }}</p>
-            </div>
+             
         @endif
 				<div class="box blue span12">
 					<div class="box-header" data-original-title="">
