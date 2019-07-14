@@ -1,0 +1,84 @@
+
+1. ecommerce project by laravel 5.6 
+https://bit.ly/2GD8JWH
+Overview of complete project
+
+2. E-commerce project by laravel 5.6 part-1 (Introduction)
+https://bit.ly/2XKE3f9
+Features of project and all requirements
+
+3. E-commerce project by laravel 5.6 part-2 (Database design)
+https://bit.ly/2JLfKUF
+Database design and relationship overview
+
+4. E-commerce project by laravel 5.6 part-3
+https://bit.ly/2YTgX2f
+Frontend blade templating
+
+5. E-commerce project by laravel 5.6 part-4
+https://bit.ly/2XL3YhP
+Home controller for viewing frontend home page
+Create Route for home page viewing
+
+6. E-commerce project by laravel 5.6 part-5
+https://bit.ly/2O4jOoq
+Database configuration in ENV and database.php inside config
+Admin Templating. 
+Admin Controller
+Login page
+
+7. E-commerce project by laravel 5.6 part-6
+https://bit.ly/2LPLrPb
+Admin Templating
+Login page
+Dashobard / Admin panel home page
+
+8. E-commerce project by laravel 5.6 part-7
+https://bit.ly/2Y14Ral
+Migration for Admin Table
+Migrate Admin Table
+Login workable with DB class and session create manually
+
+9. E-commerce project by laravel 5.6 part-8
+https://bit.ly/2xPvr7D
+Logout
+SuperAdminController
+Menu linking
+
+10. E-commerce project by laravel 5.6 part-9
+https://bit.ly/30w4MZN
+Category Controller
+Category CRUD pages
+Create necessary Routes 
+
+11. E-commerce project by laravel 5.6 part-10
+https://bit.ly/2xOH1jc
+Migration for Category Table
+Category CRUD methods in Category Controller 
+Create necessary Routes 
+
+12. E-commerce project by laravel 5.6 part-11
+https://bit.ly/30H2cQX
+Category Entry
+Category Edit
+Show Session message for Entry Success
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
