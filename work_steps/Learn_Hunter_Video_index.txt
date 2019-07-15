@@ -63,6 +63,25 @@ Category Entry
 Category Edit
 Show Session message for Entry Success
 
+13. E-commerce project by laravel 5.6 part-12
+https://bit.ly/2LR9ihm
+All Category show with a table
+Category Active, Inactive status show with blade
+
+14. E-commerce project by laravel 5.6 part-13
+https://bit.ly/2LpbTzI
+Category Active, Inactive in action 
+
+15. E-commerce project by laravel 5.6 part-14
+https://bit.ly/2SeSsKn
+Categry Edit Data with passing ID
+Category Edit Form
+Category Update method
+
+16. E-commerce project by laravel 5.6 part-15
+https://bit.ly/2SfcLrc
+Category Delete with passing ID
+Show session messege after delete
 
 
 
